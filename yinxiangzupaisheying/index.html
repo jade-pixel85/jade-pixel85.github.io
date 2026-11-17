@@ -1,0 +1,1294 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>印象足拍摄影全套作品-足模写真合集与套图解析</title>
+<meta name="description" content="印象足拍摄影全套作品按系列整理，收录足模写真套图的拍摄时间、服装造型与主题差异，附套图挑选方法、场景布光说明和读者评论，帮助快速找到想看的那一组。">
+<meta name="keywords" content="印象足拍摄影全套作品">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b2a'/%3E%3Cpath d='M18 44c0-10 6-18 14-22 3 6 3 12 0 18 4-2 8-2 12 0-4 8-12 12-26 4z' fill='%23e8b98a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#16202c;
+  --ink-2:#3d4b5c;
+  --muted:#6b7a8c;
+  --line:#e2e6ec;
+  --line-2:#cfd7e1;
+  --bg:#f7f5f1;
+  --card:#ffffff;
+  --brand:#1c2f45;
+  --brand-2:#2f5170;
+  --accent:#b9754a;
+  --accent-soft:#f3e4d6;
+  --gold:#c9974f;
+  --ok:#3f7a5c;
+  --warn:#9a6a1f;
+  --radius:14px;
+  --radius-s:8px;
+  --shadow:0 2px 10px rgba(22,32,44,.06);
+  --shadow-h:0 6px 18px rgba(22,32,44,.10);
+  --gap:clamp(14px,2vw,24px);
+  --max:1180px;
+  --sticky-h:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h)}
+body{
+  margin:0;
+  font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"Microsoft YaHei",serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.85;
+  font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.35;margin:0}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.3em}
+button{font-family:inherit}
+
+/* ---------- sticky stack ---------- */
+.sticky-stack{position:sticky;top:0;z-index:60}
+.announce{
+  background:var(--brand);
+  color:#eaeff5;
+  font-size:13.5px;
+  letter-spacing:.02em;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.announce .inner{
+  max-width:var(--max);margin:0 auto;padding:7px 18px;
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+}
+.announce .tag{
+  background:var(--accent);color:#fff;font-size:11.5px;
+  padding:1px 8px;border-radius:99px;letter-spacing:.06em;flex:none;
+}
+.announce time{color:#c9d6e4;font-variant-numeric:tabular-nums}
+.announce .sep{opacity:.35}
+
+.site-header{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 1px 0 rgba(22,32,44,.03);
+}
+.header-inner{
+  max-width:var(--max);margin:0 auto;padding:10px 18px;
+  display:flex;align-items:center;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:40px;height:40px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-name{font-size:17px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
+.brand-sub{font-size:11.5px;color:var(--muted);letter-spacing:.16em}
+
+.main-nav{margin-left:auto;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+.main-nav a{
+  font-size:14px;color:var(--ink-2);padding:7px 10px;border-radius:8px;
+  text-decoration:none;white-space:nowrap;
+}
+.main-nav a:hover{background:#eef1f5;color:var(--brand);text-decoration:none}
+.main-nav a.is-active{color:var(--brand);font-weight:700;background:var(--accent-soft)}
+
+.header-tools{display:flex;align-items:center;gap:8px;flex:none}
+.search-box{display:flex;align-items:center;border:1px solid var(--line-2);border-radius:99px;background:#fff;overflow:hidden}
+.search-box input{
+  border:0;padding:7px 12px;font-size:13.5px;width:150px;outline:none;background:transparent;color:var(--ink);
+}
+.search-box input:focus{box-shadow:none}
+.search-box button{
+  border:0;background:var(--brand);color:#fff;padding:8px 13px;font-size:13px;cursor:pointer;
+}
+.search-box button:hover{background:var(--brand-2)}
+.menu-btn{
+  display:none;border:1px solid var(--line-2);background:#fff;border-radius:9px;
+  padding:7px 12px;font-size:13.5px;color:var(--ink);cursor:pointer;
+}
+.menu-btn:focus-visible,.search-box button:focus-visible,.main-nav a:focus-visible,.to-top:focus-visible,
+details summary:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.search-feedback{
+  max-width:var(--max);margin:0 auto;padding:0 18px;font-size:13px;color:var(--warn);
+}
+.search-feedback:not(:empty){padding-bottom:8px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 460px at 78% -10%,rgba(185,117,74,.18),transparent 62%),
+    radial-gradient(760px 380px at 8% 0%,rgba(47,81,112,.20),transparent 60%),
+    linear-gradient(160deg,#13202f 0%,#1c2f45 46%,#24374c 100%);
+  color:#eef2f7;
+}
+.hero-inner{
+  max-width:var(--max);margin:0 auto;padding:60px 18px 54px;
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:clamp(24px,4vw,52px);align-items:center;position:relative;z-index:2;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.2em;
+  color:#e0c39c;border:1px solid rgba(224,195,156,.38);padding:4px 12px;border-radius:99px;
+  margin-bottom:18px;font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.hero h1{
+  font-size:clamp(28px,4.4vw,46px);font-weight:800;letter-spacing:.01em;margin-bottom:16px;
+  text-wrap:balance;
+}
+.hero h1 .hl{color:#e9bf8e}
+.hero-lead{
+  font-size:16.5px;color:#c7d3e1;max-width:46ch;margin-bottom:22px;
+}
+.hero-lead strong{color:#f0f4f8;font-weight:700}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:99px;
+  font-size:14.5px;font-weight:600;text-decoration:none;transition:transform .18s ease,background .18s ease;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#c98757}
+.btn-ghost{border:1px solid rgba(255,255,255,.34);color:#e8eef6}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+  border-top:1px solid rgba(255,255,255,.16);padding-top:18px;max-width:430px;
+}
+.hero-stats div{font-size:12.5px;color:#a9bacd;font-family:system-ui,"Microsoft YaHei",sans-serif}
+.hero-stats b{display:block;font-size:22px;color:#f2f6fa;font-family:Georgia,serif;letter-spacing:.02em}
+.hero-visual{position:relative;min-height:300px}
+.hero-visual svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.hero-visual .vlabel{
+  position:absolute;left:6%;bottom:2%;font-size:12px;color:#b9c8d9;letter-spacing:.14em;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+
+/* ---------- layout ---------- */
+.shell{max-width:var(--max);margin:0 auto;padding:0 18px}
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 296px;gap:clamp(22px,3vw,40px);
+  padding:44px 0 10px;align-items:start;
+}
+.main-col{min-width:0}
+.side-col{position:sticky;top:calc(var(--sticky-h) + 14px);display:flex;flex-direction:column;gap:18px}
+
+section.block{margin-bottom:46px;scroll-margin-top:var(--sticky-h)}
+.block-head{margin-bottom:18px}
+.block-head h2{
+  font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:.01em;
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+}
+.block-head h2 .kicker{
+  font-family:system-ui,"Microsoft YaHei",sans-serif;font-size:11.5px;font-weight:600;
+  color:var(--accent);letter-spacing:.18em;text-transform:uppercase;
+}
+.block-head p{color:var(--muted);font-size:14.5px;margin:6px 0 0;max-width:64ch}
+.rule{height:1px;background:var(--line);margin:0 0 18px}
+
+/* generic card */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.card-body{padding:16px 18px}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--ink-2);margin-bottom:10px}
+.meta{
+  font-size:12.5px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.tagline{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{
+  font-size:12px;background:#eef1f5;color:var(--ink-2);padding:2px 9px;border-radius:99px;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.tag-accent{background:var(--accent-soft);color:#8a4f2b}
+
+/* overview */
+.overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.overview-item{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;box-shadow:var(--shadow);
+}
+.overview-item .num{
+  font-family:Georgia,serif;font-size:26px;color:var(--accent);line-height:1.1;margin-bottom:4px;
+}
+.overview-item h3{font-size:15px;margin-bottom:6px}
+.overview-item p{font-size:13.8px;color:var(--ink-2);margin:0}
+.overview-note{
+  margin-top:14px;font-size:13.5px;color:var(--muted);border-left:3px solid var(--line-2);padding-left:12px;
+}
+.overview-note b{color:var(--ink-2)}
+
+/* featured */
+.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.feature-card{display:grid;grid-template-columns:132px minmax(0,1fr)}
+.feature-card .thumb{position:relative;background:#dfe4ea}
+.feature-card .thumb img{width:100%;height:100%;object-fit:cover}
+.feature-card .card-body{padding:14px 16px}
+.feature-card h3{font-size:15.5px;margin-bottom:4px}
+.feature-card p{font-size:13.8px;margin-bottom:8px}
+.feature-card .meta{font-size:12px}
+.badge{
+  position:absolute;left:8px;top:8px;background:rgba(28,47,69,.86);color:#fff;
+  font-size:11.5px;padding:2px 8px;border-radius:6px;letter-spacing:.03em;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+
+/* latest list */
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line-2)}
+.timeline li{
+  position:relative;padding:0 0 16px 20px;
+}
+.timeline li::before{
+  content:"";position:absolute;left:-6px;top:9px;width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--accent);
+}
+.timeline time{
+  font-size:12px;color:var(--accent);letter-spacing:.04em;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.timeline h3{font-size:15.5px;margin:2px 0 3px}
+.timeline p{font-size:13.8px;color:var(--ink-2);margin:0}
+
+/* category index */
+.cat-index{display:flex;flex-wrap:wrap;gap:8px}
+.cat-index a{
+  display:inline-flex;align-items:baseline;gap:8px;border:1px solid var(--line-2);
+  background:#fff;border-radius:10px;padding:8px 13px;font-size:14px;color:var(--ink);
+  text-decoration:none;transition:transform .16s ease,border-color .16s ease;
+}
+.cat-index a:hover{transform:translateY(-2px);border-color:var(--accent);text-decoration:none}
+.cat-index a span{font-size:12px;color:var(--muted);font-family:system-ui,"Microsoft YaHei",sans-serif}
+
+/* deep dive */
+.article-lead{
+  background:#fbf8f3;border:1px solid #ecdfcc;border-left:4px solid var(--accent);
+  border-radius:var(--radius-s);padding:16px 18px;margin-bottom:22px;font-size:15px;color:var(--ink-2);
+}
+.article-lead b{color:var(--ink)}
+.deep h3{
+  font-size:18px;margin:26px 0 8px;padding-left:12px;border-left:4px solid var(--brand-2);
+}
+.deep p{font-size:15.5px;color:#26323f;margin-bottom:.85em}
+.deep ul{font-size:15px;color:var(--ink-2)}
+.deep li{margin-bottom:6px}
+.deep li b{color:var(--ink)}
+.compare{
+  width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:13.8px;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.compare caption{
+  caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);
+  padding-bottom:6px;font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.compare th,.compare td{
+  border:1px solid var(--line-2);padding:8px 10px;vertical-align:top;text-align:left;
+}
+.compare thead th{background:#eef1f5;font-weight:700;color:var(--ink)}
+.compare tbody th{background:#fafbfc;font-weight:600;white-space:nowrap}
+.pullquote{
+  border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
+  padding:16px 4px;margin:20px 0;font-size:17px;color:var(--brand);font-weight:600;
+}
+.pullquote span{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:6px;font-family:system-ui,"Microsoft YaHei",sans-serif}
+
+/* guide steps */
+.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:s;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px 18px 16px 56px;position:relative;box-shadow:var(--shadow);
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);position:absolute;left:16px;top:14px;
+  font-family:Georgia,serif;font-size:20px;color:var(--accent);
+}
+.steps h3{font-size:15.5px;margin-bottom:4px}
+.steps p{font-size:14px;color:var(--ink-2);margin:0}
+.steps .hint{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+/* faq */
+.faq-list{display:grid;gap:10px}
+details.faq{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:0 16px;
+}
+details.faq[open]{border-color:var(--line-2);box-shadow:var(--shadow)}
+details.faq summary{
+  cursor:pointer;list-style:none;padding:14px 0;font-size:15.5px;font-weight:700;color:var(--ink);
+  display:flex;justify-content:space-between;gap:12px;align-items:flex-start;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";font-family:system-ui,sans-serif;color:var(--accent);font-size:19px;line-height:1;flex:none;margin-top:2px;
+}
+details.faq[open] summary::after{content:"−"}
+details.faq .ans{padding:0 0 15px;font-size:14.3px;color:var(--ink-2)}
+details.faq .ans p:last-child{margin-bottom:0}
+
+/* comments */
+.comments{display:grid;gap:12px}
+.comment{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;
+}
+.comment-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap;
+  font-family:system-ui,"Microsoft YaHei",sans-serif;
+}
+.avatar{
+  width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;flex:none;
+  display:grid;place-items:center;font-size:13px;font-weight:700;
+}
+.comment-head b{font-size:14px;color:var(--ink)}
+.comment-head time{font-size:12px;color:var(--muted)}
+.comment-head .score{margin-left:auto;font-size:12px;color:var(--gold);letter-spacing:.06em}
+.comment p{font-size:14.2px;color:var(--ink-2);margin:0}
+.comment .quote{color:var(--brand);border-bottom:1px dashed var(--line-2)}
+
+/* news */
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.news-item{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow);
+}
+.news-item h3{font-size:15px;margin-bottom:4px}
+.news-item p{font-size:13.8px;color:var(--ink-2);margin-bottom:8px}
+.news-item .meta{font-size:12px}
+
+/* recommend */
+.rec-tags{display:flex;flex-wrap:wrap;gap:10px}
+.rec-tags a{
+  display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line-2);
+  border-radius:99px;padding:8px 15px;font-size:14px;color:var(--ink);text-decoration:none;
+  transition:transform .16s ease,border-color .16s ease;
+}
+.rec-tags a:hover{transform:translateY(-2px);border-color:var(--accent);text-decoration:none}
+.rec-tags a i{font-style:normal;font-size:12px;color:var(--accent)}
+
+/* ranking */
+.rank{list-style:none;padding:0;margin:0;counter-reset:r;display:grid;gap:8px}
+.rank li{
+  counter-increment:r;display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;
+}
+.rank li::before{
+  content:counter(r);font-family:Georgia,serif;font-size:17px;color:var(--accent);
+  width:30px;height:30px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;
+}
+.rank b{font-size:14.5px;display:block;color:var(--ink)}
+.rank span{font-size:12.8px;color:var(--muted)}
+.rank em{font-style:normal;font-family:Georgia,serif;font-size:16px;color:var(--brand)}
+
+/* sidebar */
+.side-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:16px 18px;
+}
+.side-card h2{font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.side-card h2::before{content:"";width:4px;height:15px;background:var(--accent);border-radius:2px}
+.side-nav ul{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.side-nav a{
+  display:block;font-size:13.8px;color:var(--ink-2);padding:6px 10px;border-radius:7px;text-decoration:none;
+  border-left:2px solid transparent;
+}
+.side-nav a:hover{background:#eef1f5;text-decoration:none}
+.side-nav a.active{
+  background:var(--accent-soft);color:#8a4f2b;font-weight:700;border-left-color:var(--accent);
+}
+.side-facts{list-style:none;padding:0;margin:0;font-size:13.5px;color:var(--ink-2)}
+.side-facts li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.side-facts li:last-child{border-bottom:0}
+.side-facts b{color:var(--ink);font-variant-numeric:tabular-nums}
+.side-card .mini{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.side-teaser{display:grid;gap:10px}
+.side-teaser a{
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;align-items:center;
+  text-decoration:none;color:var(--ink);
+}
+.side-teaser img{width:64px;height:52px;object-fit:cover;border-radius:7px}
+.side-teaser b{font-size:13.5px;font-weight:600;display:block;line-height:1.4}
+.side-teaser span{font-size:12px;color:var(--muted)}
+
+/* to top */
+.to-top{
+  position:fixed;right:18px;bottom:22px;z-index:70;border:0;border-radius:50%;
+  width:46px;height:46px;background:var(--brand);color:#fff;font-size:18px;cursor:pointer;
+  display:none;place-items:center;box-shadow:var(--shadow-h);
+}
+.to-top.show{display:grid}
+
+/* footer */
+.site-footer{
+  margin-top:40px;background:#13202f;color:#c3cfdc;border-top:1px solid rgba(255,255,255,.08);
+}
+.footer-inner{
+  max-width:var(--max);margin:0 auto;padding:40px 18px 24px;
+  display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px);
+}
+.footer-brand .brand-name{color:#f2f6fa}
+.footer-brand .brand-sub{color:#7f93a9}
+.footer-brand p{font-size:13.8px;color:#9fb0c3;margin:12px 0 0;max-width:38ch}
+.footer-col h3{font-size:13.5px;color:#e9eff6;letter-spacing:.1em;margin-bottom:10px}
+.footer-col ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.footer-col a{font-size:13.5px;color:#a8b9cb;text-decoration:none}
+.footer-col a:hover{color:#fff;text-decoration:underline}
+.footer-note{
+  max-width:var(--max);margin:0 auto;padding:0 18px 26px;font-size:12.5px;color:#7f93a9;
+}
+.footer-note .line{height:1px;background:rgba(255,255,255,.1);margin-bottom:16px}
+.footer-note p{margin:0 0 6px}
+.footer-note b{color:#c3cfdc;font-weight:600}
+
+/* responsive */
+@media (max-width:1000px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .side-col{position:static;order:2}
+  .hero-inner{grid-template-columns:minmax(0,1fr)}
+  .hero-visual{max-width:520px;min-height:0}
+  .overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--sticky-h:auto}
+  .header-inner{flex-wrap:wrap;row-gap:8px}
+  .menu-btn{display:inline-block;margin-left:auto}
+  .header-tools{margin-left:auto}
+  .main-nav{
+    order:5;width:100%;flex-direction:column;align-items:stretch;margin-left:0;
+    border-top:1px solid var(--line);display:none;padding-top:6px;
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:9px 10px}
+  .search-box input{width:110px}
+  .feature-grid,.news-grid{grid-template-columns:minmax(0,1fr)}
+  .feature-card{grid-template-columns:110px minmax(0,1fr)}
+  .overview-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-inner{padding:40px 16px 36px}
+  .hero-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero-stats b{font-size:19px}
+  .footer-inner{grid-template-columns:1fr}
+  body{font-size:16px}
+  .rank li{grid-template-columns:30px minmax(0,1fr);row-gap:2px}
+  .rank em{grid-column:2;justify-self:start}
+  .to-top{right:12px;bottom:14px;width:42px;height:42px}
+}
+@media (max-width:420px){
+  .search-box input{width:84px}
+  .brand-name{font-size:15.5px}
+  .feature-card{grid-template-columns:96px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .btn:hover,.cat-index a:hover,.rec-tags a:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-stack">
+  <div class="announce">
+    <div class="inner">
+      <span class="tag">更新</span>
+      <span>印象足拍摄影全套作品 11 月 7 日新增「秋藤系列」第 3 组，共 46 张</span>
+      <span class="sep">|</span>
+      <span>套图目录同步补入 4 期旧档拍摄参数</span>
+      <time datetime="2026-11-08">2026-11-08</time>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="印象足拍摄影全套作品 首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="品牌图形：一枚足形与光圈组合的标志">
+          <rect width="64" height="64" rx="14" fill="#1c2f45"/>
+          <circle cx="32" cy="30" r="17" fill="none" stroke="#c9974f" stroke-width="1.6" stroke-dasharray="3 4"/>
+          <path d="M20 45c0-9 5-16 12-20 3 5 3 11 0 16 4-2 8-2 11 0-4 7-11 10-23 4z" fill="#e9bf8e"/>
+          <circle cx="37" cy="22" r="2.6" fill="#f7f5f1"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">印象足拍摄影全套作品</span>
+          <span class="brand-sub">足模写真套图档案</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选套图</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#category">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">读者评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#ranking">人气榜单</a>
+      </nav>
+
+      <div class="header-tools">
+        <form class="search-box" role="search" id="searchForm">
+          <label for="siteSearch" style="position:absolute;left:-9999px">站内查找套图</label>
+          <input id="siteSearch" type="search" placeholder="找套图 / 造型" autocomplete="off">
+          <button type="submit">查找</button>
+        </form>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">菜单</button>
+      </div>
+    </div>
+    <div class="search-feedback" id="searchFeedback" aria-live="polite"></div>
+  </header>
+</div>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">FOOT PORTRAIT ARCHIVE · 2026</span>
+        <h1>印象足拍摄影全套作品</h1>
+        <p class="hero-lead">
+          按拍摄年份与主题归档足模写真套图，<strong>目前可查 12 个系列、214 组图</strong>。
+          每组保留拍摄日期、镜头焦段、鞋袜配饰与灯光位置，方便按风格而不是按图数量挑。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#featured">看本月精选 6 组</a>
+          <a class="btn btn-ghost" href="/#category">按主题分类检索</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>214</b>组套图归档</div>
+          <div><b>12</b>个主题系列</div>
+          <div><b>46</b>组含布光记录</div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 420 360" role="presentation">
+          <defs>
+            <linearGradient id="gFoot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f2d3b1"/>
+              <stop offset="1" stop-color="#c58f60"/>
+            </linearGradient>
+            <linearGradient id="gFrame" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#31465e"/>
+              <stop offset="1" stop-color="#1a2a3d"/>
+            </linearGradient>
+          </defs>
+          <rect x="26" y="24" width="368" height="312" rx="18" fill="url(#gFrame)" stroke="#4a6480" stroke-width="1.2"/>
+          <rect x="42" y="40" width="336" height="280" rx="12" fill="none" stroke="#6c86a0" stroke-width="1" stroke-dasharray="5 6"/>
+          <g opacity=".85">
+            <circle cx="300" cy="96" r="46" fill="none" stroke="#c9974f" stroke-width="1.4"/>
+            <circle cx="300" cy="96" r="30" fill="none" stroke="#c9974f" stroke-width="1"/>
+            <circle cx="300" cy="96" r="14" fill="none" stroke="#c9974f" stroke-width="1"/>
+          </g>
+          <path d="M118 236c-8-30-2-58 16-78 12-13 27-19 42-17 14 2 23 12 25 26 2 12-4 22-14 27 12 3 19 14 18 27-1 16-14 28-32 30-22 3-44-4-55-15z" fill="url(#gFoot)"/>
+          <path d="M172 172c6-6 14-8 21-5" fill="none" stroke="#a06f47" stroke-width="2" stroke-linecap="round"/>
+          <path d="M168 196c8-4 17-3 24 2" fill="none" stroke="#a06f47" stroke-width="2" stroke-linecap="round"/>
+          <path d="M160 222c10-5 21-3 28 3" fill="none" stroke="#a06f47" stroke-width="2" stroke-linecap="round"/>
+          <rect x="244" y="188" width="120" height="76" rx="10" fill="rgba(255,255,255,.06)" stroke="#5c7690" stroke-width="1"/>
+          <text x="256" y="214" fill="#c9d6e4" font-size="12" font-family="system-ui,sans-serif">35mm · f/2.8</text>
+          <text x="256" y="234" fill="#9fb3c7" font-size="11" font-family="system-ui,sans-serif">柔光箱 45°</text>
+          <text x="256" y="252" fill="#9fb3c7" font-size="11" font-family="system-ui,sans-serif">03 号机位</text>
+          <text x="60" y="88" fill="#e9bf8e" font-size="13" letter-spacing="3" font-family="Georgia,serif">ARCHIVE</text>
+          <text x="60" y="108" fill="#8497ab" font-size="10.5" letter-spacing="2" font-family="system-ui,sans-serif">SERIES 12 / 214 SETS</text>
+          <path d="M60 300h300" stroke="#3d5a78" stroke-width="1"/>
+          <circle cx="60" cy="300" r="3" fill="#c9974f"/>
+        </svg>
+        <span class="vlabel">套图档案卡 · 布光与焦段记录</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="shell">
+    <div class="layout">
+
+      <div class="main-col">
+
+        <!-- 概览 -->
+        <section class="block" id="overview">
+          <div class="block-head">
+            <h2><span class="kicker">01</span>领域概览：足模套图在拍什么</h2>
+            <p>从题材、机位到后期，先把这一行当的门类弄清楚，再谈哪一组更值得看。</p>
+          </div>
+          <div class="rule"></div>
+          <div class="overview-grid">
+            <div class="overview-item">
+              <div class="num">01</div>
+              <h3>静物式足部特写</h3>
+              <p>单足置于亚克力台或绒布上，机位固定，主看线条与甲面处理。多数使用 90mm 微距，光圈落在 f/5.6 到 f/8。</p>
+            </div>
+            <div class="overview-item">
+              <div class="num">02</div>
+              <h3>室内场景人像</h3>
+              <p>以沙发、飘窗、木地板为背景，强调腿与足的延伸关系。35mm 与 50mm 交替，常见三灯布置。</p>
+            </div>
+            <div class="overview-item">
+              <div class="num">03</div>
+              <h3>鞋袜配饰组合</h3>
+              <p>丝袜、棉袜、浅口鞋、绑带鞋按色系搭配，一组图里配饰切换 3 到 5 次，考的是造型连续性。</p>
+            </div>
+            <div class="overview-item">
+              <div class="num">04</div>
+              <h3>户外自然光系列</h3>
+              <p>草地、石阶、泳池边，光线依赖时段，拍摄窗口通常只有上午 9 点前和傍晚 5 点后。</p>
+            </div>
+            <div class="overview-item">
+              <div class="num">05</div>
+              <h3>棚拍高调白场</h3>
+              <p>纯白背景配柔光箱，后期提亮但不磨皮，甲缘与关节纹理保留，是判断修图水平的参照组。</p>
+            </div>
+            <div class="overview-item">
+              <div class="num">06</div>
+              <h3>主题叙事套图</h3>
+              <p>依托季节、材质或电影配色构思，一组 30 到 60 张，图与图之间有动作推进，不靠单张取胜。</p>
+            </div>
+          </div>
+          <p class="overview-note">
+            归档口径：一组图指同一次拍摄、同一造型下的连续成片；跨造型的按造型拆分计数。<b>2026 年 10 月 20 日</b>起目录统一采用这一口径，此前并入合辑的 9 组已重新拆出。
+          </p>
+        </section>
+
+        <!-- 精选 -->
+        <section class="block" id="featured">
+          <div class="block-head">
+            <h2><span class="kicker">02</span>精选内容推荐：本季六组值得先看</h2>
+            <p>按布光完整度、造型一致性和成片率三项挑出，每组附拍摄要点。</p>
+          </div>
+          <div class="rule"></div>
+          <div class="feature-grid">
+
+            <article class="card feature-card">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/yinxiangzu-qiuTeng3/300/380" width="300" height="380" loading="lazy" alt="秋藤系列第三组，木纹台面上的足部特写与藤编配饰">
+                <span class="badge">10-28</span>
+              </div>
+              <div class="card-body">
+                <h3>秋藤系列 · 第 3 组</h3>
+                <p>木纹台面、藤编靠垫与米白棉袜，逆光勾边。46 张成片，选片率 31%。</p>
+                <div class="meta"><span>46 张</span><span>50mm</span><span>逆光</span></div>
+                <div class="tagline"><span class="tag tag-accent">棉袜造型</span><span class="tag">午后自然光</span></div>
+              </div>
+            </article>
+
+            <article class="card feature-card">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/yinxiangzu-baiChang/300/380" width="300" height="380" loading="lazy" alt="白场高调系列，纯白背景下的足部与浅口鞋组合">
+                <span class="badge">10-21</span>
+              </div>
+              <div class="card-body">
+                <h3>白场高调 · 裸色浅口鞋</h3>
+                <p>双柔光箱加一块反光板，白平衡 5600K。甲面未做磨皮，甲缘清晰。</p>
+                <div class="meta"><span>38 张</span><span>90mm 微距</span><span>f/8</span></div>
+                <div class="tagline"><span class="tag tag-accent">棚拍白场</span><span class="tag">浅口鞋</span></div>
+              </div>
+            </article>
+
+            <article class="card feature-card">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/yinxiangzu-shuiAn/300/380" width="300" height="380" loading="lazy" alt="水岸石阶系列，浅水石阶上的赤足与倒影">
+                <span class="badge">11-02</span>
+              </div>
+              <div class="card-body">
+                <h3>水岸石阶 · 赤足倒影</h3>
+                <p>水位低，石阶露出三级，倒影提供第二层构图。拍摄时只有 27 分钟可用光。</p>
+                <div class="meta"><span>52 张</span><span>35mm</span><span>傍晚</span></div>
+                <div class="tagline"><span class="tag tag-accent">户外自然光</span><span class="tag">倒影构图</span></div>
+              </div>
+            </article>
+
+            <article class="card feature-card">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/yinxiangzu-siWa/300/380" width="300" height="380" loading="lazy" alt="丝袜质感系列，深灰丝袜在灯下呈现的编织纹理">
+                <span class="badge">10-14</span>
+              </div>
+              <div class="card-body">
+                <h3>丝袜质感 · 深灰 20D</h3>
+                <p>用侧逆光压出编织纹理，避免正面平光把网眼吃掉。含 6 张放大细节。</p>
+                <div class="meta"><span>41 张</span><span>100mm</span><span>侧逆光</span></div>
+                <div class="tagline"><span class="tag tag-accent">材质特写</span><span class="tag">20D 薄款</span></div>
+              </div>
+            </article>
+
+            <article class="card feature-card">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/yinxiangzu-chuangTai/300/380" width="300" height="380" loading="lazy" alt="飘窗午后系列，白纱窗帘下的足部与木地板">
+                <span class="badge">10-08</span>
+              </div>
+              <div class="card-body">
+                <h3>飘窗午后 · 白纱滤光</h3>
+                <p>白纱把直射光打散，明暗过渡柔和。造型切换 3 次，含一组裸足与一组薄袜。</p>
+                <div class="meta"><span>44 张</span><span>50mm</span><span>f/2.2</span></div>
+                <div class="tagline"><span class="tag tag-accent">室内场景</span><span class="tag">白纱滤光</span></div>
+              </div>
+            </article>
+
+            <article class="card feature-card">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/yinxiangzu-bangDai/300/380" width="300" height="380" loading="lazy" alt="绑带鞋主题，脚踝处交叉绑带与深色地板">
+                <span class="badge">09-26</span>
+              </div>
+              <div class="card-body">
+                <h3>绑带鞋主题 · 交叉踝带</h3>
+                <p>绑带在脚踝形成第二视觉中心，机位偏低压缩小腿长度。含穿脱过程 8 张。</p>
+                <div class="meta"><span>36 张</span><span>85mm</span><span>低机位</span></div>
+                <div class="tagline"><span class="tag tag-accent">鞋饰组合</span><span class="tag">低机位</span></div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section class="block" id="latest">
+          <div class="block-head">
+            <h2><span class="kicker">03</span>最新更新：近三周归档动态</h2>
+            <p>只列有实体文件入档的变动，改标签、补参数的细项不在此重复。</p>
+          </div>
+          <div class="rule"></div>
+          <ol class="timeline">
+            <li>
+              <time datetime="2026-11-07">11 月 7 日</time>
+              <h3>秋藤系列补入第 3 组</h3>
+              <p>46 张成片入档，附 3 页布光手记。原定 11 月 5 日拍摄，因雨改期两天。</p>
+            </li>
+            <li>
+              <time datetime="2026-11-04">11 月 4 日</time>
+              <h3>水岸石阶系列追加 12 张</h3>
+              <p>补的是退潮后第二机位，蹲拍角度，35mm 端。原有 40 张扩到 52 张。</p>
+            </li>
+            <li>
+              <time datetime="2026-10-30">10 月 30 日</time>
+              <h3>丝袜质感系列修订甲面色号</h3>
+              <p>第 2 至第 9 张原记「奶茶色」，经对照拍摄现场色卡改为「浅豆沙」，其余未动。</p>
+            </li>
+            <li>
+              <time datetime="2026-10-22">10 月 22 日</time>
+              <h3>白场高调系列补拍 6 张</h3>
+              <p>补的是鞋口细节，90mm 微距，灯光位置与首拍一致，色温差控制在 80K 内。</p>
+            </li>
+            <li>
+              <time datetime="2026-10-15">10 月 15 日</time>
+              <h3>飘窗午后系列重排图序</h3>
+              <p>按动作推进而非拍摄时间排序，首图换成拉开窗帘的一帧，成片数量不变。</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 分类入口 -->
+        <section class="block" id="category">
+          <div class="block-head">
+            <h2><span class="kicker">04</span>分类入口：按主题与场景检索</h2>
+            <p>点开任一入口，落到对应系列的第一张图；括号内为该类已归档组数。</p>
+          </div>
+          <div class="rule"></div>
+          <nav class="cat-index" aria-label="套图分类索引">
+            <a href="/#featured">棚拍高调白场 <span>18 组</span></a>
+            <a href="/#featured">丝袜材质特写 <span>22 组</span></a>
+            <a href="/#featured">浅口鞋与绑带鞋 <span>16 组</span></a>
+            <a href="/#featured">飘窗与木地板场景 <span>14 组</span></a>
+            <a href="/#featured">户外石阶与浅水 <span>11 组</span></a>
+            <a href="/#featured">棉袜与家居服组合 <span>19 组</span></a>
+            <a href="/#featured">单足静物特写 <span>27 组</span></a>
+            <a href="/#featured">甲面与足部护理记录 <span>13 组</span></a>
+            <a href="/#featured">冬靴与过膝袜 <span>9 组</span></a>
+            <a href="/#featured">泳池边自然光 <span>7 组</span></a>
+            <a href="/#featured">低机位延伸构图 <span>15 组</span></a>
+            <a href="/#featured">电影配色主题组 <span>8 组</span></a>
+            <a href="/#featured">含布光手记的套图 <span>46 组</span></a>
+          </nav>
+        </section>
+
+        <!-- 深度解析 -->
+        <section class="block deep" id="deep">
+          <div class="block-head">
+            <h2><span class="kicker">05</span>深度解析：套图看的是连续，不是单张</h2>
+            <p>主体阅读区。三个可核对的判断，附拍摄记录与成片率数据，能被反驳。</p>
+          </div>
+          <div class="rule"></div>
+          <p class="article-lead">
+            一句话判断：<b>一组足部套图的质量上限，由造型切换的节奏决定，不由最好的那张决定。</b>
+            支撑它的不是审美偏好，而是 2026 年 9 月至 10 月归档的 38 组图的选片率分布——选片率高于 30% 的组，造型切换次数普遍在 3 到 4 次，低于 2 次的组选片率很少越过 22%。
+          </p>
+
+          <h3>判断一：三灯布置比双灯更稳，但只限白场</h3>
+          <p>
+            「白场高调 · 裸色浅口鞋」一组在 10 月 21 日拍摄，用双柔光箱加一块反光板，38 张成片，选片率 34%。同一摄影师在 9 月 17 日用三灯（主灯、辅灯、发丝灯）拍了同类题材 42 张，选片率 29%。差别不在数量，在光比：三灯下脚背高光容易过曝，7 张因高光溢出废弃；双灯那组只有 2 张因此被删。
+          </p>
+          <table class="compare">
+            <caption>白场题材两次拍摄的对照（数据来自拍摄手记与成片目录）</caption>
+            <thead>
+              <tr><th scope="col">项目</th><th scope="col">9 月 17 日 · 三灯</th><th scope="col">10 月 21 日 · 双灯</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">灯位</th><td>主灯 45°、辅灯 90°、发丝灯 160°</td><td>双柔光箱 45°、反光板补暗部</td></tr>
+              <tr><th scope="row">拍摄张数</th><td>145</td><td>112</td></tr>
+              <tr><th scope="row">成片数</th><td>42</td><td>38</td></tr>
+              <tr><th scope="row">选片率</th><td>29%</td><td>34%</td></tr>
+              <tr><th scope="row">高光溢出废弃</th><td>7 张</td><td>2 张</td></tr>
+            </tbody>
+          </table>
+          <p>
+            说白场适合三灯，在现有数据上站不住。三灯的价值在深色背景或有明显投影需求的场景，白场吃的是均匀，多一盏灯就多一处失控的高光。
+          </p>
+
+          <h3>判断二：丝袜组的成败在光位，不在薄厚</h3>
+          <p>
+            10 月 14 日的「丝袜质感 · 深灰 20D」用侧逆光，编织纹理清晰，41 张里 13 张做了放大细节。同一批 20D 在其他组里若改用正面平光，纹理被压平，成片率从 34% 掉到 19%。这不是薄厚的问题——20D 与 40D 在同一光位下成片率分别为 34% 和 31%，差距远小于光位带来的差距。
+          </p>
+          <p>
+            反过来也要说清：侧逆光会抬高小腿边缘的对比，深色背景里显瘦，浅色背景里显硬。9 月 26 日「绑带鞋主题」用的是浅灰背景，侧逆光让小趾外侧出现过一道生硬亮边，后期没有完全修掉。所以光位选择得先看背景色。
+          </p>
+
+          <h3>判断三：单足静物最容易糊弄，也最容易被识破</h3>
+          <p>
+            单足静物组共 27 组，机位固定、背景简单，看似最省事。但 27 组中有 9 组的甲缘处理被读者在评论里点出问题，集中在「甲沟阴影没清」和「甲面反光板位置不对」两类。反例是 10 月 21 日白场组，甲面用 30cm 小反光板斜 20° 补光，四根趾甲的受光几乎一致，评论里没有一条提到甲面。
+          </p>
+          <p>
+            「差不多就行」的直觉在这里不成立：背景越素，观众的视线越集中在边缘。这条判断可被推翻的方式很具体——找到一组 27 张以上、背景纯色、甲面未修但评论无异议的图，现有目录里还没有。
+          </p>
+
+          <div class="pullquote">
+            选片率低于 20% 的组，多数不是光的问题，是造型在半途就断了。
+            <span>2026 年 9 月至 10 月归档 38 组中，选片率低于 20% 的 11 组有 8 组只做了一个造型。</span>
+          </div>
+
+          <h3>可核对的拆法</h3>
+          <ul>
+            <li><b>看日期与天气：</b>户外组记录里写「雨改期」的，成片色调普遍偏冷，白平衡在 4800K 附近。</li>
+            <li><b>看选片率：</b>30% 以上通常意味着造型切换 ≥3 次；不足 20% 的组多数只有一套配饰。</li>
+            <li><b>看细节张数：</b>含 5 张以上微距的组，甲面处理基本过关；一张都没有的，要打问号。</li>
+            <li><b>看后期口径：</b>目录里注明「未磨皮」的 46 组，关节纹理完整，可直接对比拍摄状态。</li>
+          </ul>
+        </section>
+
+        <!-- 体验指南 -->
+        <section class="block" id="guide">
+          <div class="block-head">
+            <h2><span class="kicker">06</span>体验指南：四步挑到想看的那组</h2>
+            <p>从目的出发，而不是从封面出发。顺序按实际检索习惯排列。</p>
+          </div>
+          <div class="rule"></div>
+          <ol class="steps">
+            <li>
+              <h3>先定用途：看构图还是看材质</h3>
+              <p>找构图参考，去「低机位延伸构图」与「水岸石阶」；找丝袜、棉袜的材质表现，去「丝袜材质特写」。</p>
+              <p class="hint">两类需求重合度低，混着翻容易在十组之外失去方向。</p>
+            </li>
+            <li>
+              <h3>再看拍摄日期能不能复用</h3>
+              <p>自然光组标注了时段与天气，10 月中旬到 11 月初的户外组多记录为「晴、少云」，参考价值高于阴天组。</p>
+              <p class="hint">日期在 2026-10-08 至 2026-11-07 之间的组，参数记录最完整。</p>
+            </li>
+            <li>
+              <h3>用布光手记核对成片</h3>
+              <p>含手记的 46 组，先看灯位再看图，能判断某张的暗部是补出来的还是没补。白场组尤其适用。</p>
+              <p class="hint">没有手记的组不是不能看，只是别把它当布光范本。</p>
+            </li>
+            <li>
+              <h3>留一组做对照</h3>
+              <p>挑一组「未磨皮」的白场图放着，再看其他组，修图尺度差异一眼能看出，不必逐张比。</p>
+              <p class="hint">对照组建议固定，换着比会失去基准。</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- FAQ -->
+        <section class="block" id="faq">
+          <div class="block-head">
+            <h2><span class="kicker">07</span>常见问题</h2>
+            <p>问题按被问到的频次排，答案只讲这套归档里能查到的东西。</p>
+          </div>
+          <div class="rule"></div>
+          <div class="faq-list">
+            <details class="faq" open>
+              <summary>足模套图里「一组」到底指多少张？</summary>
+              <div class="ans"><p>指同一次拍摄、同一造型下的连续成片，数量不固定。当前目录里最少的一组 24 张（冬靴与过膝袜系列 9 月 30 日拍摄），最多的一组 68 张（单足静物特写 8 月合辑拆分后）。跨造型的按造型拆开计数。</p></div>
+            </details>
+            <details class="faq">
+              <summary>丝袜材质特写为什么大多用侧逆光？</summary>
+              <div class="ans"><p>侧逆光能在编织表面形成细窄的高光线，把网眼和纹理勾出来；正面平光会把纹理压平，20D 薄款尤其明显。代价是深色背景容易在小趾外侧留硬边，需要在机位上调 5 到 10 度。</p></div>
+            </details>
+            <details class="faq">
+              <summary>白场高调图里甲面泛白，是修过头了吗？</summary>
+              <div class="ans"><p>多数是反光板位置太高。甲面属高反光材质，小反光板斜 20° 左右补光比较稳；若整片泛白又没有细节，基本是后期提亮过度。目录里注「未磨皮」的组可直接对照关节纹理判断。</p></div>
+            </details>
+            <details class="faq">
+              <summary>低机位延伸构图会拉长小腿吗？</summary>
+              <div class="ans"><p>会，但方向要分清。机位低于脚踝、镜头略上仰，足部占比放大、小腿显长；机位与脚背齐平则容易压缩脚掌。9 月 26 日绑带鞋组用的就是低机位，绑带在脚踝形成第二视觉中心，压缩了小腿长度。</p></div>
+            </details>
+            <details class="faq">
+              <summary>棉袜造型和丝袜造型能放一起比吗？</summary>
+              <div class="ans"><p>能比构图，不能比材质。棉袜厚，光影层次少，适合看色块与褶皱；丝袜薄，看纹理与透感。同一光位下棉袜组的成片率通常更高，因为褶皱容错大，但细节张数往往更少。</p></div>
+            </details>
+            <details class="faq">
+              <summary>「未磨皮」标注可信吗？</summary>
+              <div class="ans"><p>可以自己核。看膝关节与脚踝两侧的纹理是否连续，如果皮肤纹理在中段突然变平滑，基本做过局部处理。目录中 46 组标了未磨皮，其中 10 月 21 日白场组的趾甲边缘与原片一致，可信度最高。</p></div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 评论 -->
+        <section class="block" id="comments">
+          <div class="block-head">
+            <h2><span class="kicker">08</span>读者评论</h2>
+            <p>保留原话，未做润色。含中性意见与挑刺。</p>
+          </div>
+          <div class="rule"></div>
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-head">
+                <span class="avatar">林</span><b>林间慢走</b><time datetime="2026-11-07">11 月 7 日</time>
+                <span class="score">★★★★★</span>
+              </div>
+              <p>秋藤系列第 3 组的逆光勾边做得好，尤其第 12 张脚背那道亮线，没糊。棉袜褶皱也没摆得太规整，像真的刚坐下。</p>
+            </div>
+            <div class="comment">
+              <div class="comment-head">
+                <span class="avatar">周</span><b>周末翻图</b><time datetime="2026-11-05">11 月 5 日</time>
+                <span class="score">★★★☆☆</span>
+              </div>
+              <p>水岸石阶那组，蹲拍机位的 12 张里有两张水平线是歪的，看着别扭。倒影构图本身没问题，是拍的时候没端平。</p>
+            </div>
+            <div class="comment">
+              <div class="comment-head">
+                <span class="avatar">顾</span><b>顾北的相机</b><time datetime="2026-11-03">11 月 3 日</time>
+                <span class="score">★★★★☆</span>
+              </div>
+              <p>白场组的布光手记有用，双灯加拉反光板这个组合我照着试了一次，高光确实好控。就是反光板角度写「斜 20°」，实际很难量准。</p>
+            </div>
+            <div class="comment">
+              <div class="comment-head">
+                <span class="avatar">阿</span><b>阿米豆腐</b><time datetime="2026-10-31">10 月 31 日</time>
+                <span class="score">★★☆☆☆</span>
+              </div>
+              <p>丝袜那组的浅豆沙色号改得对，之前写的奶茶色明显偏黄。不过第 27 张的脚踝阴影还是重了点，不知道是不是只改了标签没重出图。</p>
+            </div>
+            <div class="comment">
+              <div class="comment-head">
+                <span class="avatar">陈</span><b>陈小满</b><time datetime="2026-10-28">10 月 28 日</time>
+                <span class="score">★★★★☆</span>
+              </div>
+              <p>飘窗午后的图序重排后顺多了，拉开窗帘那一帧当首图很对。就是白纱滤光那几张整体偏灰，看着不够透。</p>
+            </div>
+            <div class="comment">
+              <div class="comment-head">
+                <span class="avatar">老</span><b>老树根</b><time datetime="2026-10-24">10 月 24 日</time>
+                <span class="score">★★★☆☆</span>
+              </div>
+              <p>绑带鞋主题的低机位我保留意见。压缩小腿是压缩了，但脚掌比例被放大得有点过，第 8 张看着像换了个脚型。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 资讯 -->
+        <section class="block" id="news">
+          <div class="block-head">
+            <h2><span class="kicker">09</span>相关资讯</h2>
+            <p>拍摄现场、目录口径、器材变动三类消息，与上方更新条不重复。</p>
+          </div>
+          <div class="rule"></div>
+          <div class="news-grid">
+            <article class="news-item">
+              <h3>11 月棚拍改用 100mm 微距补细节</h3>
+              <p>原先用 90mm 拍甲面，边缘有轻微拉伸。11 月 2 日起细节张统一换 100mm，首组应用在水岸石阶的追加部分。</p>
+              <div class="meta"><span>11 月 2 日</span><span>器材</span></div>
+            </article>
+            <article class="news-item">
+              <h3>目录口径第二轮核对完成</h3>
+              <p>10 月 20 日启用的拆分计数，到 11 月 6 日核对完 214 组，其中 3 组因造型重叠重新归并，总数未变。</p>
+              <div class="meta"><span>11 月 6 日</span><span>归档规则</span></div>
+            </article>
+            <article class="news-item">
+              <h3>秋藤系列原定拍摄日因雨顺延</h3>
+              <p>原定 11 月 5 日拍第 4 组，当天上午有雨，改到 11 月 9 日。第 3 组的逆光条件因此提前两天完成。</p>
+              <div class="meta"><span>11 月 5 日</span><span>拍摄安排</span></div>
+            </article>
+            <article class="news-item">
+              <h3>棉袜组新增色卡对照页</h3>
+              <p>米白、燕麦、浅灰三色在 5600K 与 4800K 下的差异做了对照，附 6 张同机位样片，供造型选色参考。</p>
+              <div class="meta"><span>10 月 27 日</span><span>造型资料</span></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section class="block" id="recommend">
+          <div class="block-head">
+            <h2><span class="kicker">10</span>相关推荐</h2>
+            <p>按搜索习惯整理的长尾入口，点开落到对应系列的归档位置。</p>
+          </div>
+          <div class="rule"></div>
+          <div class="rec-tags">
+            <a href="/#featured">足模写真套图拍摄参数 <i>46 组</i></a>
+            <a href="/#deep">丝袜材质侧逆光布光法 <i>解析</i></a>
+            <a href="/#featured">白场高调足部特写怎么拍 <i>18 组</i></a>
+            <a href="/#guide">足模套图选片率怎么看 <i>指南</i></a>
+            <a href="/#featured">浅口鞋裸色搭配足部特写 <i>16 组</i></a>
+            <a href="/#faq">甲面反光板角度与甲沟阴影 <i>问答</i></a>
+            <a href="/#latest">秋藤系列第 3 组拍摄手记 <i>11-07</i></a>
+            <a href="/#featured">低机位延伸构图足部比例 <i>15 组</i></a>
+            <a href="/#comments">未磨皮足部套图对照方法 <i>评论</i></a>
+          </div>
+        </section>
+
+        <!-- 榜单 -->
+        <section class="block" id="ranking">
+          <div class="block-head">
+            <h2><span class="kicker">11</span>人气榜单：按近 30 天阅读与收藏</h2>
+            <p>统计区间 2026-10-09 至 2026-11-07，收藏权重高于阅读。</p>
+          </div>
+          <div class="rule"></div>
+          <ol class="rank">
+            <li><div><b>秋藤系列 · 第 3 组</b><span>46 张 · 逆光勾边 · 棉袜造型</span></div><em>1,284</em></li>
+            <li><div><b>白场高调 · 裸色浅口鞋</b><span>38 张 · 双灯 · 未磨皮</span></div><em>1,137</em></li>
+            <li><div><b>丝袜质感 · 深灰 20D</b><span>41 张 · 侧逆光 · 含 6 张微距</span></div><em>986</em></li>
+            <li><div><b>水岸石阶 · 赤足倒影</b><span>52 张 · 傍晚自然光</span></div><em>902</em></li>
+            <li><div><b>飘窗午后 · 白纱滤光</b><span>44 张 · 3 次造型切换</span></div><em>845</em></li>
+            <li><div><b>绑带鞋主题 · 交叉踝带</b><span>36 张 · 低机位</span></div><em>731</em></li>
+          </ol>
+        </section>
+
+      </div>
+
+      <!-- 侧栏 -->
+      <aside class="side-col" aria-label="侧栏导航与数据">
+        <nav class="side-card side-nav" aria-label="栏内导航">
+          <h2>栏内导航</h2>
+          <ul>
+            <li><a href="/#overview">领域概览</a></li>
+            <li><a href="/#featured">精选套图</a></li>
+            <li><a href="/#latest">最新更新</a></li>
+            <li><a href="/#category">分类入口</a></li>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#comments">读者评论</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#recommend">相关推荐</a></li>
+            <li><a href="/#ranking">人气榜单</a></li>
+          </ul>
+        </nav>
+
+        <div class="side-card">
+          <h2>归档快照</h2>
+          <ul class="side-facts">
+            <li><span>套图总数</span><b>214 组</b></li>
+            <li><span>主题系列</span><b>12 个</b></li>
+            <li><span>含布光手记</span><b>46 组</b></li>
+            <li><span>近 30 天新增</span><b>5 组</b></li>
+            <li><span>最近入档</span><b>11-07</b></li>
+          </ul>
+          <p class="mini">统计截至 2026 年 11 月 7 日，口径同目录拆分规则。</p>
+        </div>
+
+        <div class="side-card">
+          <h2>近三组入档</h2>
+          <div class="side-teaser">
+            <a href="/#featured">
+              <img src="https://picsum.photos/seed/yinxiangzu-side-qiu/120/96" width="120" height="96" loading="lazy" alt="秋藤系列缩略图，藤编与棉袜">
+              <span><b>秋藤系列 第 3 组</b><span>11-07 · 46 张</span></span>
+            </a>
+            <a href="/#featured">
+              <img src="https://picsum.photos/seed/yinxiangzu-side-shui/120/96" width="120" height="96" loading="lazy" alt="水岸石阶系列缩略图，浅水与倒影">
+              <span><b>水岸石阶 追加 12 张</b><span>11-04 · 52 张</span></span>
+            </a>
+            <a href="/#featured">
+              <img src="https://picsum.photos/seed/yinxiangzu-side-si/120/96" width="120" height="96" loading="lazy" alt="丝袜质感系列缩略图，深灰编织纹理">
+              <span><b>丝袜质感 色号修订</b><span>10-30 · 41 张</span></span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">
+        <span class="brand-name">印象足拍摄影全套作品</span>
+        <span class="brand-sub">FOOT PORTRAIT ARCHIVE</span>
+      </span>
+      <p>给每组套图留一份可复核的拍摄记录，让挑图这件事有据可依，而不只是翻封面。</p>
+    </div>
+    <div class="footer-col">
+      <h3>栏目入口</h3>
+      <ul>
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#featured">精选套图</a></li>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>检索与反馈</h3>
+      <ul>
+        <li><a href="/#category">分类入口</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">读者评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#ranking">人气榜单</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-note">
+    <div class="line"></div>
+    <p><b>示例数据说明：</b>页面内拍摄日期、张数、选片率、阅读与收藏数值均为演示用示例数据，评论为示例文本，不对应真实人物与真实拍摄现场。</p>
+    <p>页面内容更新：2026-11-08，对应正文可核对项为公告条的「秋藤系列第 3 组 46 张入档」与最新更新中 11 月 7 日条目。</p>
+    <p>© 2026 印象足拍摄影全套作品 归档页 · 版权与内容归属以实际资料为准。</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainNav');
+  var toTop = document.getElementById('toTop');
+  var searchForm = document.getElementById('searchForm');
+  var searchInput = document.getElementById('siteSearch');
+  var feedback = document.getElementById('searchFeedback');
+
+  /* 移动端菜单 */
+  if (menuBtn && nav){
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.textContent = open ? '收起' : '菜单';
+    });
+    nav.addEventListener('click', function(e){
+      var a = e.target.closest('a');
+      if (a && window.innerWidth <= 760){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.textContent = '菜单';
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && nav.classList.contains('open')){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.textContent = '菜单';
+        menuBtn.focus();
+      }
+    });
+  }
+
+  /* 回到顶部 */
+  function onScroll(){
+    if (window.scrollY > 420){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
+  var sections = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var y = window.scrollY + 160;
+    var idx = 0;
+    sections.forEach(function(sec, i){
+      if (sec && sec.offsetTop <= y) idx = i;
+    });
+    sideLinks.forEach(function(a,i){
+      a.classList.toggle('active', i === idx);
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  window.addEventListener('resize', highlight);
+  highlight();
+
+  /* 本地查找 */
+  searchForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = searchInput.value.trim();
+    if (!q){ feedback.textContent = '请输入要找的套图名或造型词，例如「丝袜」「白场」「秋藤」。'; return; }
+    var pool = [];
+    document.querySelectorAll('.main-col h2, .main-col h3, .main-col .tag, .main-col .rec-tags a, .main-col .cat-index a, .main-col details.faq summary').forEach(function(el){
+      var t = (el.textContent || '').trim();
+      if (t) pool.push({text:t, el:el});
+    });
+    var hit = pool.find(function(item){ return item.text.indexOf(q) !== -1; });
+    if (hit){
+      feedback.textContent = '找到相关条目：' + hit.text.slice(0, 40);
+      var target = hit.el.closest('section') || hit.el;
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      feedback.textContent = '没有找到「' + q + '」相关条目，可试试「秋藤」「丝袜质感」「白场高调」「绑带鞋」。';
+    }
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"印象足拍摄影全套作品",
+  "description":"按主题系列归档足模写真套图，附拍摄日期、镜头焦段、布光记录与选片率。",
+  "inLanguage":"zh-CN",
+  "keywords":"印象足拍摄影全套作品",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"/?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"足模套图里「一组」到底指多少张？",
+      "acceptedAnswer":{"@type":"Answer","text":"指同一次拍摄、同一造型下的连续成片，数量不固定。当前目录里最少一组 24 张，最多一组 68 张；跨造型的按造型拆开计数。"}
+    },
+    {
+      "@type":"Question",
+      "name":"丝袜材质特写为什么大多用侧逆光？",
+      "acceptedAnswer":{"@type":"Answer","text":"侧逆光能在编织表面形成细窄高光线，把网眼和纹理勾出来；正面平光会把纹理压平，20D 薄款尤其明显。代价是深色背景容易在小趾外侧留硬边。"}
+    },
+    {
+      "@type":"Question",
+      "name":"白场高调图里甲面泛白，是修过头了吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"多数是反光板位置太高。甲面属高反光材质，小反光板斜 20° 左右补光比较稳；若整片泛白又没有细节，基本是后期提亮过度。"}
+    },
+    {
+      "@type":"Question",
+      "name":"低机位延伸构图会拉长小腿吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"会，但方向要分清。机位低于脚踝、镜头略上仰，足部占比放大、小腿显长；机位与脚背齐平则容易压缩脚掌。"}
+    },
+    {
+      "@type":"Question",
+      "name":"棉袜造型和丝袜造型能放一起比吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"能比构图，不能比材质。棉袜厚，适合看色块与褶皱；丝袜薄，看纹理与透感。同一光位下棉袜组成片率通常更高，但细节张数往往更少。"}
+    },
+    {
+      "@type":"Question",
+      "name":"「未磨皮」标注可信吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"可以自己核。看膝关节与脚踝两侧的纹理是否连续，如果皮肤纹理在中段突然变平滑，基本做过局部处理。"}
+    }
+  ]
+}
+</script>
+
+</body>
+                                                             </html>
