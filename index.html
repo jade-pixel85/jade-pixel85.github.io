@@ -1,0 +1,1637 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海角黑料网入口-社区瓜料归档与筛选</title>
+<meta name="description" content="海角黑料网入口是一个整理社区热传瓜料与争议话题的归档站，收录时间线、原帖截图核验、版本差异对照与网友评论，帮助读者在信息碎片中判断真伪、找到讨论脉络与后续进展。">
+<meta name="keywords" content="海角黑料网入口">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314171f'/%3E%3Cpath d='M14 44 L26 18 L36 34 L44 22 L52 44' fill='none' stroke='%23f0b429' stroke-width='5' stroke-linejoin='round' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%23e05c4b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f5f3ee;
+  --bg-card:#ffffff;
+  --ink:#1c1f26;
+  --ink-soft:#4a5060;
+  --ink-faint:#767d8d;
+  --brand:#14171f;
+  --brand-2:#232838;
+  --accent:#c8432f;
+  --accent-soft:#fbe9e5;
+  --gold:#b5862c;
+  --gold-soft:#f7efdc;
+  --line:#dfdbd2;
+  --line-soft:#ece8e0;
+  --radius:10px;
+  --radius-sm:6px;
+  --shadow:0 1px 2px rgba(28,31,38,.06),0 6px 18px rgba(28,31,38,.06);
+  --shadow-lift:0 2px 4px rgba(28,31,38,.08),0 10px 26px rgba(28,31,38,.10);
+  --space-1:6px;
+  --space-2:10px;
+  --space-3:16px;
+  --space-4:24px;
+  --space-5:34px;
+  --space-6:48px;
+  --space-7:64px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --announce-h:40px;
+  --header-h:62px;
+  --sticky-sum:calc(var(--announce-h) + var(--header-h));
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-sum) + 14px);}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0;}
+ul,ol{padding-left:1.15em;}
+button{font-family:inherit;}
+
+/* ---------- sticky wrappers ---------- */
+.sticky-top{
+  position:sticky;
+  top:0;
+  z-index:60;
+}
+
+/* ---------- announcement ---------- */
+.announce{
+  background:var(--brand);
+  color:#e9e6df;
+  font-size:13px;
+  height:var(--announce-h);
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid #2c3140;
+}
+.announce .wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+}
+.announce .tag{
+  background:var(--accent);
+  color:#fff;
+  font-size:11px;
+  letter-spacing:.06em;
+  padding:1px 8px;
+  border-radius:999px;
+  flex:0 0 auto;
+  line-height:1.7;
+}
+.announce p{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  color:#cfcabd;
+}
+.announce a{
+  color:#f0b429;
+  text-decoration:none;
+  margin-left:auto;
+  flex:0 0 auto;
+  font-size:12.5px;
+  border-bottom:1px dashed rgba(240,180,41,.5);
+}
+.announce a:hover{color:#ffd166;}
+
+/* ---------- header ---------- */
+.site-header{
+  background:rgba(245,243,238,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  height:var(--header-h);
+  display:flex;
+  align-items:center;
+}
+.header-inner{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:var(--space-4);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  flex:0 0 auto;
+}
+.brand-mark{width:30px;height:30px;flex:0 0 auto;}
+.brand-text{
+  font-weight:800;
+  font-size:17px;
+  letter-spacing:.02em;
+  color:var(--brand);
+  white-space:nowrap;
+}
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:2px;
+  margin-left:6px;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.main-nav::-webkit-scrollbar{display:none;}
+.main-nav a{
+  text-decoration:none;
+  font-size:14px;
+  color:var(--ink-soft);
+  padding:6px 10px;
+  border-radius:var(--radius-sm);
+  white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .18s,background .18s;
+}
+.main-nav a:hover{background:#eae6dc;color:var(--brand);}
+.main-nav a.active{color:var(--brand);border-bottom-color:var(--accent);font-weight:600;}
+.header-tools{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex:0 0 auto;
+}
+.search-box{
+  display:flex;
+  align-items:center;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:2px 4px 2px 12px;
+  gap:4px;
+}
+.search-box input{
+  border:0;
+  outline:0;
+  background:transparent;
+  font-size:13.5px;
+  width:132px;
+  color:var(--ink);
+  padding:5px 0;
+}
+.search-box input::placeholder{color:var(--ink-faint);}
+.search-box button{
+  border:0;
+  background:var(--brand);
+  color:#fff;
+  border-radius:999px;
+  font-size:12.5px;
+  padding:5px 12px;
+  cursor:pointer;
+}
+.search-box button:hover{background:var(--brand-2);}
+.search-box button:focus-visible,.menu-btn:focus-visible,a:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+.menu-btn{
+  display:none;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  width:38px;height:36px;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:4px;
+  padding:0;
+}
+.menu-btn span{display:block;width:17px;height:2px;background:var(--brand);border-radius:2px;}
+.to-top{
+  position:fixed;
+  right:18px;
+  bottom:20px;
+  z-index:70;
+  width:42px;height:42px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--brand);
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+}
+.to-top.show{display:flex;}
+
+/* ---------- layout ---------- */
+.wrap{
+  width:min(1180px,calc(100% - 40px));
+  margin-inline:auto;
+}
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 288px;
+  gap:var(--space-5);
+  align-items:start;
+  padding-block:var(--space-5) var(--space-7);
+}
+main{min-width:0;}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#14171f 0%,#1d2233 58%,#262c3f 100%);
+  color:#f2efe7;
+  border-radius:var(--radius);
+  margin-top:var(--space-4);
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  gap:var(--space-4);
+  padding:var(--space-5) var(--space-5) var(--space-5);
+  align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  letter-spacing:.14em;
+  color:#f0b429;
+  border:1px solid rgba(240,180,41,.35);
+  padding:3px 10px;
+  border-radius:999px;
+  margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(26px,3.6vw,38px);
+  line-height:1.28;
+  letter-spacing:.01em;
+  font-weight:800;
+  margin-bottom:12px;
+}
+.hero-desc{
+  font-size:15px;
+  color:#c9c5ba;
+  max-width:46ch;
+  margin-bottom:20px;
+}
+.hero-desc b{color:#f0b429;font-weight:600;}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  font-size:14px;
+  padding:9px 18px;
+  border-radius:999px;
+  border:1px solid transparent;
+  transition:transform .18s,background .18s;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#b53a27;}
+.btn-ghost{border-color:rgba(242,239,231,.35);color:#f2efe7;}
+.btn-ghost:hover{background:rgba(242,239,231,.1);}
+.hero-stats{
+  display:flex;
+  gap:var(--space-4);
+  margin-top:22px;
+  border-top:1px solid rgba(242,239,231,.14);
+  padding-top:16px;
+}
+.hero-stats div{font-size:12.5px;color:#9d998f;}
+.hero-stats strong{
+  display:block;
+  color:#f2efe7;
+  font-size:20px;
+  font-weight:800;
+  line-height:1.2;
+}
+.hero-visual{
+  position:relative;
+  min-height:250px;
+}
+.hero-visual svg{width:100%;height:auto;display:block;}
+
+/* ---------- section base ---------- */
+.section{
+  margin-top:var(--space-6);
+}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:var(--space-3);
+}
+.section-head h2{
+  font-size:21px;
+  letter-spacing:.01em;
+  font-weight:800;
+  color:var(--brand);
+  position:relative;
+  padding-left:13px;
+}
+.section-head h2::before{
+  content:"";
+  position:absolute;
+  left:0;top:5px;bottom:5px;
+  width:4px;
+  border-radius:2px;
+  background:var(--accent);
+}
+.section-head .sub{
+  font-size:12.5px;
+  color:var(--ink-faint);
+}
+.section-head .more{
+  margin-left:auto;
+  font-size:13px;
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid rgba(200,67,47,.35);
+}
+.lead{
+  font-size:14.5px;
+  color:var(--ink-soft);
+  margin-bottom:var(--space-3);
+  max-width:74ch;
+}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--space-3);
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--space-3);
+}
+.feature-card{
+  padding:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.feature-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);}
+.feature-card .thumb{
+  aspect-ratio:16/9;
+  width:100%;
+  object-fit:cover;
+  background:#e6e2d8;
+}
+.feature-card .body{
+  padding:14px 16px 16px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+}
+.feature-card h3{font-size:16px;line-height:1.45;font-weight:700;}
+.feature-card h3 a{text-decoration:none;}
+.feature-card h3 a:hover{color:var(--accent);}
+.feature-card p{font-size:13.5px;color:var(--ink-soft);}
+.meta-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--ink-faint);
+  margin-top:auto;
+}
+.pill{
+  display:inline-block;
+  font-size:11.5px;
+  padding:1px 8px;
+  border-radius:999px;
+  background:#efebe1;
+  color:var(--ink-soft);
+  white-space:nowrap;
+}
+.pill-hot{background:var(--accent-soft);color:#a33121;}
+.pill-gold{background:var(--gold-soft);color:#8a6416;}
+.pill-ink{background:#e6e4ec;color:#3c3f55;}
+
+/* ---------- list ---------- */
+.compact-list{list-style:none;padding:0;margin:0;}
+.compact-list li{
+  display:grid;
+  grid-template-columns:56px minmax(0,1fr);
+  gap:12px;
+  padding:13px 0;
+  border-bottom:1px dashed var(--line);
+}
+.compact-list li:last-child{border-bottom:0;}
+.date-chip{
+  font-size:11.5px;
+  color:var(--ink-faint);
+  border-right:1px solid var(--line);
+  padding-right:8px;
+  line-height:1.5;
+}
+.date-chip b{display:block;color:var(--brand);font-size:14px;}
+.compact-list h3{font-size:14.5px;font-weight:600;line-height:1.5;}
+.compact-list a{text-decoration:none;}
+.compact-list a:hover{color:var(--accent);}
+.compact-list p{font-size:12.5px;color:var(--ink-faint);margin-top:3px;}
+
+.news-panel{padding:var(--space-3) var(--space-3) var(--space-2);}
+
+/* ---------- channel index ---------- */
+.channel-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:var(--space-2);
+}
+.channel{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  padding:12px 14px;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  text-decoration:none;
+  transition:border-color .18s,transform .18s;
+}
+.channel:hover{border-color:var(--accent);transform:translateY(-2px);}
+.channel b{font-size:14px;color:var(--brand);}
+.channel span{font-size:12px;color:var(--ink-faint);}
+
+/* ---------- deep read ---------- */
+.deep{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:var(--space-4) var(--space-4) var(--space-4);
+  box-shadow:var(--shadow);
+}
+.deep h2{
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+.deep .byline{
+  font-size:12.5px;
+  color:var(--ink-faint);
+  margin-bottom:var(--space-3);
+  padding-bottom:var(--space-2);
+  border-bottom:1px solid var(--line-soft);
+}
+.deep h3{
+  font-size:16.5px;
+  font-weight:700;
+  margin:var(--space-4) 0 var(--space-2);
+  color:var(--brand);
+}
+.deep p{font-size:14.5px;color:#2c303a;margin-bottom:10px;}
+.deep p strong{color:var(--brand);}
+.deep ul{margin:6px 0 12px;}
+.deep li{font-size:14px;color:#2c303a;margin-bottom:5px;}
+.quote{
+  border-left:3px solid var(--gold);
+  background:var(--gold-soft);
+  padding:12px 16px;
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-size:14px;
+  color:#4a3c17;
+  margin:14px 0;
+}
+.compare{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+  margin:14px 0;
+  font-size:13.5px;
+}
+.compare > div{padding:12px 14px;}
+.compare .c-head{font-weight:700;font-size:13px;letter-spacing:.04em;background:#f1eee6;color:var(--brand);}
+.compare .c-a{background:#fdfaf3;border-right:1px solid var(--line);}
+.compare .c-b{background:#f9f8fb;}
+.compare p{font-size:13.5px;margin:0 0 6px;color:#33363f;}
+.compare p:last-child{margin-bottom:0;}
+
+/* ---------- steps ---------- */
+.steps{
+  counter-reset:step;
+  list-style:none;
+  padding:0;
+  display:grid;
+  gap:var(--space-2);
+}
+.steps li{
+  counter-increment:step;
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  gap:12px;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  padding:13px 16px 13px 12px;
+}
+.steps li::before{
+  content:counter(step);
+  width:30px;height:30px;
+  border-radius:50%;
+  background:var(--brand);
+  color:#f0b429;
+  font-weight:700;
+  font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps h3{font-size:14.5px;font-weight:700;margin-bottom:2px;}
+.steps p{font-size:13px;color:var(--ink-soft);}
+
+/* ---------- FAQ ---------- */
+details.faq{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  padding:2px 16px;
+  margin-bottom:8px;
+}
+details.faq summary{
+  cursor:pointer;
+  list-style:none;
+  font-size:14.5px;
+  font-weight:600;
+  padding:12px 0;
+  color:var(--brand);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+details.faq summary::-webkit-details-marker{display:none;}
+details.faq summary::before{
+  content:"+";
+  color:var(--accent);
+  font-weight:800;
+  width:14px;
+  flex:0 0 auto;
+}
+details.faq[open] summary::before{content:"–";}
+details.faq .faq-body{
+  font-size:13.8px;
+  color:var(--ink-soft);
+  padding:0 0 13px 24px;
+  border-top:1px solid var(--line-soft);
+  padding-top:10px;
+}
+
+/* ---------- comments ---------- */
+.comment-list{
+  list-style:none;
+  padding:0;
+  display:grid;
+  gap:var(--space-2);
+}
+.comment{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  padding:13px 15px;
+}
+.comment header{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12.5px;
+  color:var(--ink-faint);
+  margin-bottom:5px;
+}
+.avatar{
+  width:26px;height:26px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#3a4157,#6b5a3e);
+  color:#f5f3ee;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;
+  font-weight:700;
+  flex:0 0 auto;
+}
+.comment .who{color:var(--brand);font-weight:600;}
+.comment p{font-size:13.8px;color:#2e323b;}
+.comment .reply-to{color:var(--gold);font-weight:600;}
+
+/* ---------- recommend tags ---------- */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;}
+.tag-cloud a{
+  text-decoration:none;
+  font-size:13px;
+  padding:6px 13px;
+  border-radius:999px;
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  color:var(--ink-soft);
+  transition:all .18s;
+}
+.tag-cloud a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+
+/* ---------- timeline ---------- */
+.timeline{
+  list-style:none;
+  padding:0 0 0 4px;
+  margin:0;
+  border-left:2px solid var(--line);
+}
+.timeline li{
+  position:relative;
+  padding:0 0 var(--space-3) 20px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-7px;top:7px;
+  width:12px;height:12px;
+  border-radius:50%;
+  background:var(--bg-card);
+  border:2px solid var(--accent);
+}
+.timeline time{font-size:12px;color:var(--ink-faint);display:block;}
+.timeline h3{font-size:14.5px;font-weight:700;margin:2px 0 3px;}
+.timeline p{font-size:13px;color:var(--ink-soft);}
+
+/* ---------- rank panel ---------- */
+.rank-panel{
+  background:var(--brand);
+  color:#ece9e1;
+  border-radius:var(--radius);
+  padding:var(--space-4);
+}
+.rank-panel h2{
+  color:#fff;font-size:19px;font-weight:800;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+}
+.rank-panel h2 span{color:#f0b429;font-size:12px;font-weight:600;border:1px solid rgba(240,180,41,.4);padding:1px 8px;border-radius:999px;}
+.rank-list{list-style:none;padding:0;margin:0;display:grid;gap:2px;}
+.rank-list li{
+  display:grid;
+  grid-template-columns:26px minmax(0,1fr) auto;
+  gap:10px;
+  align-items:center;
+  padding:9px 4px;
+  border-bottom:1px solid rgba(236,233,225,.1);
+  font-size:13.8px;
+}
+.rank-list li:last-child{border-bottom:0;}
+.rank-list .n{font-weight:800;color:#f0b429;font-size:15px;}
+.rank-list a{text-decoration:none;color:#ece9e1;}
+.rank-list a:hover{color:#f0b429;}
+.rank-list .heat{font-size:11.5px;color:#9d998f;white-space:nowrap;}
+
+/* ---------- sidebar ---------- */
+.sidebar{
+  position:sticky;
+  top:calc(var(--sticky-sum) + 16px);
+  display:grid;
+  gap:var(--space-3);
+}
+.side-card{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+.side-card h2{
+  font-size:14.5px;
+  font-weight:800;
+  color:var(--brand);
+  margin-bottom:12px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--line-soft);
+  display:flex;align-items:center;gap:8px;
+}
+.side-card h2::before{
+  content:"";
+  width:4px;height:14px;
+  border-radius:2px;
+  background:var(--gold);
+}
+.side-nav{list-style:none;padding:0;margin:0;display:grid;gap:1px;}
+.side-nav a{
+  display:block;
+  text-decoration:none;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  padding:7px 9px;
+  border-radius:var(--radius-sm);
+  border-left:2px solid transparent;
+  transition:all .16s;
+}
+.side-nav a:hover{background:#f2efe7;}
+.side-nav a.active{
+  color:var(--accent);
+  font-weight:700;
+  border-left-color:var(--accent);
+  background:var(--accent-soft);
+}
+.side-item{
+  display:block;
+  text-decoration:none;
+  padding:9px 0;
+  border-bottom:1px dashed var(--line);
+}
+.side-item:last-child{border-bottom:0;}
+.side-item b{display:block;font-size:13.5px;color:var(--brand);font-weight:600;line-height:1.5;}
+.side-item:hover b{color:var(--accent);}
+.side-item span{font-size:12px;color:var(--ink-faint);}
+
+.search-feedback{
+  margin-top:10px;
+  font-size:12.5px;
+  color:var(--accent);
+  display:none;
+}
+.search-feedback.show{display:block;}
+
+/* ---------- footer ---------- */
+.site-footer{
+  background:var(--brand);
+  color:#b9b5ab;
+  margin-top:var(--space-6);
+  padding:var(--space-6) 0 var(--space-3);
+  font-size:13.5px;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.4fr 2fr;
+  gap:var(--space-5);
+  padding-bottom:var(--space-4);
+  border-bottom:1px solid #2c3140;
+}
+.footer-brand .brand{margin-bottom:12px;}
+.footer-brand .brand-text{color:#f2efe7;}
+.footer-brand p{max-width:36ch;font-size:13px;color:#9d998f;line-height:1.8;}
+.footer-cols{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:var(--space-3);
+}
+.footer-cols h3{font-size:13px;color:#f0b429;margin-bottom:8px;letter-spacing:.05em;font-weight:700;}
+.footer-cols ul{list-style:none;padding:0;margin:0;display:grid;gap:5px;}
+.footer-cols a{text-decoration:none;color:#b9b5ab;font-size:13px;}
+.footer-cols a:hover{color:#f2efe7;}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  padding-top:var(--space-3);
+  font-size:12px;
+  color:#84806f;
+}
+.footer-bottom .upd{color:#9d998f;}
+
+/* ---------- responsive ---------- */
+@media (max-width:999px){
+  :root{--space-5:26px;--space-6:38px;--space-7:50px;}
+  .layout{grid-template-columns:minmax(0,1fr);}
+  .sidebar{position:static;order:2;}
+  .hero-inner{grid-template-columns:1fr;padding:var(--space-4);}
+  .hero-visual{min-height:0;max-width:420px;}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .channel-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .footer-top{grid-template-columns:1fr;gap:var(--space-4);}
+  .main-nav{margin-left:0;}
+  .header-inner{gap:10px;}
+  .search-box input{width:96px;}
+}
+@media (max-width:719px){
+  .wrap{width:calc(100% - 28px);}
+  .main-nav{
+    display:none;
+    position:absolute;
+    left:0;right:0;
+    top:100%;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow-lift);
+    padding:8px 14px 12px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:2px;
+    z-index:55;
+  }
+  .main-nav.open{display:flex;}
+  .main-nav a{padding:9px 10px;}
+  .header-inner{position:relative;}
+  .menu-btn{display:flex;}
+  .search-box{display:none;}
+  .grid-3,.grid-2{grid-template-columns:1fr;}
+  .channel-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .compare{grid-template-columns:1fr;}
+  .compare .c-a{border-right:0;border-bottom:1px solid var(--line);}
+  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .to-top{right:12px;bottom:14px;}
+  .hero-stats{gap:var(--space-3);flex-wrap:wrap;}
+  .deep{padding:var(--space-3);}
+  .announce p{font-size:12px;}
+}
+@media (max-width:400px){
+  .channel-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:24px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  .feature-card:hover,.channel:hover,.btn:hover{transform:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="announce" id="announce">
+    <div class="wrap">
+      <span class="tag">今日更新</span>
+      <p>11月8日新增 6 条：<b>“滨江咖啡店监控时间差”</b>补充第二版原帖截图，删帖记录已归档；昨日热帖 <b>“团购返现群聊天记录”</b> 已标注为待核验。</p>
+      <a href="/#latest">查看更新日志</a>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="/#top" aria-label="海角黑料网入口 首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="14" fill="#14171f"/>
+          <path d="M14 44 L26 18 L36 34 L44 22 L52 44" fill="none" stroke="#f0b429" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="48" cy="16" r="5" fill="#e05c4b"/>
+        </svg>
+        <span class="brand-text">海角黑料网入口</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview" class="active">领域概览</a>
+        <a href="/#picks">精选推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#channels">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+      </nav>
+      <div class="header-tools">
+        <form class="search-box" id="searchForm" role="search" aria-label="站内查找">
+          <input type="search" id="searchInput" placeholder="找瓜料、时间线…" aria-label="输入关键词">
+          <button type="submit">查找</button>
+        </form>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="打开导航菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="wrap" id="top">
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-kicker">社区瓜料 · 归档与核验</span>
+        <h1 id="heroTitle">海角黑料网入口</h1>
+        <p class="hero-desc">把散落在群聊、截图和短视频里的热传事件收进同一条时间线：原帖发布、删除、二次转述各占一行，标注<b>可核对的时间与截图版本</b>，让围观的人先看清脉络再决定信不信。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#deep">读今日深度解析</a>
+          <a class="btn btn-ghost" href="/#latest">看最新归档</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>1,284</strong>条已归档事件</div>
+          <div><strong>37</strong>个争议时间线</div>
+          <div><strong>11月8日</strong>本轮更新日期</div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 420 300" role="presentation" focusable="false">
+          <defs>
+            <linearGradient id="hv1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f0b429" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#e05c4b" stop-opacity=".7"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="24" width="270" height="180" rx="12" fill="#20263a" stroke="#3a4157"/>
+          <rect x="34" y="42" width="86" height="9" rx="4" fill="#f0b429" opacity=".85"/>
+          <rect x="34" y="62" width="216" height="7" rx="3" fill="#7c849c"/>
+          <rect x="34" y="78" width="186" height="7" rx="3" fill="#565e75"/>
+          <rect x="34" y="94" width="206" height="7" rx="3" fill="#565e75"/>
+          <rect x="34" y="118" width="104" height="58" rx="8" fill="#2b3247"/>
+          <rect x="150" y="118" width="104" height="58" rx="8" fill="#2b3247"/>
+          <path d="M42 164 L64 140 L84 154 L104 132 L128 164" fill="none" stroke="url(#hv1)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="206" cy="146" r="15" fill="none" stroke="#f0b429" stroke-width="3"/>
+          <path d="M206 137 L206 146 L213 151" fill="none" stroke="#f0b429" stroke-width="3" stroke-linecap="round"/>
+          <rect x="150" y="158" width="80" height="6" rx="3" fill="#565e75"/>
+          <g transform="translate(248 178)">
+            <rect x="0" y="0" width="152" height="104" rx="12" fill="#f5f3ee" stroke="#dfdbd2"/>
+            <rect x="14" y="16" width="60" height="8" rx="4" fill="#c8432f" opacity=".85"/>
+            <rect x="14" y="34" width="118" height="6" rx="3" fill="#b9b5ab"/>
+            <rect x="14" y="47" width="98" height="6" rx="3" fill="#cbc7bc"/>
+            <rect x="14" y="60" width="110" height="6" rx="3" fill="#cbc7bc"/>
+            <rect x="14" y="78" width="46" height="14" rx="7" fill="#14171f"/>
+            <rect x="66" y="78" width="46" height="14" rx="7" fill="#e05c4b" opacity=".25"/>
+          </g>
+          <circle cx="360" cy="52" r="26" fill="none" stroke="#3a4157" stroke-width="2" stroke-dasharray="4 6"/>
+          <circle cx="360" cy="52" r="8" fill="#e05c4b"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <main>
+
+      <!-- 领域概览 -->
+      <section class="section" id="overview" aria-labelledby="overviewH">
+        <div class="section-head">
+          <h2 id="overviewH">领域概览：瓜料归档怎么读</h2>
+          <span class="sub">从原帖到二次转述的四层结构</span>
+        </div>
+        <p class="lead">一条瓜从贴吧帖子传到短视频号，平均经过 3 次以上搬运，画面与文字各丢一部分。归档按“原帖—截图—转述—评论”四层存放，每层单独标注时间戳和来源账号，方便核对哪一层开始走样。</p>
+        <div class="grid-3">
+          <article class="card feature-card">
+            <div class="body">
+              <span class="pill pill-hot">原帖层</span>
+              <h3>首发截图与发帖时间</h3>
+              <p>优先保存带系统时间、楼层编号的原始截图，标注平台与发帖账号，缺失时间戳的条目会降级到“待核验”。</p>
+              <div class="meta-row"><span>已归档 612 条</span><span>·</span><span>含删帖记录 41 条</span></div>
+            </div>
+          </article>
+          <article class="card feature-card">
+            <div class="body">
+              <span class="pill pill-gold">转述层</span>
+              <h3>搬运版本与措辞变化</h3>
+              <p>同一事件在短视频号、公众号、群聊里的二次表述并排展示，措辞差异往往就是信息失真的起点。</p>
+              <div class="meta-row"><span>对照面板 208 组</span><span>·</span><span>最大版本差 5 版</span></div>
+            </div>
+          </article>
+          <article class="card feature-card">
+            <div class="body">
+              <span class="pill pill-ink">讨论层</span>
+              <h3>评论走向与立场分布</h3>
+              <p>记录评论区风向变化，区分事实陈述、情绪表达和推测，后者单列，不与前两者混排。</p>
+              <div class="meta-row"><span>评论样本 3,400+</span><span>·</span><span>人工抽检 15%</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="section" id="picks" aria-labelledby="picksH">
+        <div class="section-head">
+          <h2 id="picksH">精选内容推荐</h2>
+          <span class="sub">编辑按核验完整度挑出的 3 条</span>
+          <a class="more" href="/#latest">全部归档 →</a>
+        </div>
+        <div class="grid-3">
+          <article class="card feature-card">
+            <img class="thumb" src="https://picsum.photos/seed/haijiao-coffee/640/360" width="640" height="360" loading="lazy" alt="滨江路咖啡店夜间门面与监控探头位置示意">
+            <div class="body">
+              <span class="pill pill-hot">监控时间差</span>
+              <h3><a href="/#deep">滨江咖啡店监控时间差：三个版本的对齐结果</a></h3>
+              <p>原帖称 21:40 进店，店方监控显示 21:52，中间 12 分钟的说法在三个搬运版本里被删掉两个。</p>
+              <div class="meta-row"><span>11月6日</span><span>·</span><span>已核验 3/4 层</span></div>
+            </div>
+          </article>
+          <article class="card feature-card">
+            <img class="thumb" src="https://picsum.photos/seed/haijiao-groupbuy/640/360" width="640" height="360" loading="lazy" alt="手机群聊界面截图，多条返现转账记录排列">
+            <div class="body">
+              <span class="pill pill-gold">群聊记录</span>
+              <h3><a href="/#latest">团购返现群聊天记录：谁改了群公告</a></h3>
+              <p>群公告在 10 月 29 日与 11 月 2 日出现两个版本，返现金额从 30 元改为 15 元，管理员账号未变。</p>
+              <div class="meta-row"><span>11月7日</span><span>·</span><span>待核验</span></div>
+            </div>
+          </article>
+          <article class="card feature-card">
+            <img class="thumb" src="https://picsum.photos/seed/haijiao-school/640/360" width="640" height="360" loading="lazy" alt="校园公告栏与手机拍摄的社团招新海报">
+            <div class="body">
+              <span class="pill pill-ink">校园社团</span>
+              <h3><a href="/#picks">社团招新海报抄袭争议：两版海报叠图对比</a></h3>
+              <p>两张海报的字体排布重合度较高，原作者晒出 9 月的设计稿文件，发帖方尚未回应。</p>
+              <div class="meta-row"><span>11月4日</span><span>·</span><span>已补充回应</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="latest" aria-labelledby="latestH">
+        <div class="section-head">
+          <h2 id="latestH">最新更新</h2>
+          <span class="sub">11月5日至11月8日归档动态</span>
+        </div>
+        <div class="card news-panel">
+          <ul class="compact-list">
+            <li>
+              <span class="date-chip"><b>11/08</b>今天</span>
+              <div>
+                <h3><a href="/#deep">滨江咖啡店监控补充第二版原帖截图</a></h3>
+                <p>新截图带楼层编号 47，发帖账号“临江路阿哲”同日 21:07 编辑过正文，删去“全程没离开”一句。</p>
+              </div>
+            </li>
+            <li>
+              <span class="date-chip"><b>11/07</b>昨天</span>
+              <div>
+                <h3><a href="/#channels">团购返现群公告两个版本并列上线</a></h3>
+                <p>10月29日版返现 30 元，11月2日版改为 15 元，群主账号 @优鲜团小陈 未更换。</p>
+              </div>
+            </li>
+            <li>
+              <span class="date-chip"><b>11/06</b>本周</span>
+              <div>
+                <h3><a href="/#picks">社团招新海报争议：原作者公开 9 月 12 日设计稿</a></h3>
+                <p>设计稿文件修改时间 9 月 12 日 14:33，与发帖方所称“10 月独立创作”的时间对不上。</p>
+              </div>
+            </li>
+            <li>
+              <span class="date-chip"><b>11/05</b>本周</span>
+              <div>
+                <h3><a href="/#guide">旧帖清理：37 条无时间戳条目降级为“待核验”</a></h3>
+                <p>集中在 2024 年搬运帖，缺原帖链接与楼层号，只保留转述层记录。</p>
+              </div>
+            </li>
+            <li>
+              <span class="date-chip"><b>11/05</b>本周</span>
+              <div>
+                <h3><a href="/#rank">本周讨论热度榜重排：咖啡店事件升至第 2</a></h3>
+                <p>评论数从 11 月 3 日的 214 条增至 11 月 8 日的 689 条，转发峰值出现在 11 月 7 日 22:10。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="channels" aria-labelledby="channelsH">
+        <div class="section-head">
+          <h2 id="channelsH">分类入口</h2>
+          <span class="sub">按场景与话题类型分区</span>
+        </div>
+        <div class="channel-grid">
+          <a class="channel" href="/#picks"><b>监控时间差争议</b><span>时间戳对齐 62 条</span></a>
+          <a class="channel" href="/#picks"><b>群聊返现纠纷</b><span>群公告版本 28 组</span></a>
+          <a class="channel" href="/#picks"><b>设计稿抄袭对照</b><span>叠图比对 19 例</span></a>
+          <a class="channel" href="/#latest"><b>校园社团风波</b><span>招新与活动 44 条</span></a>
+          <a class="channel" href="/#latest"><b>外卖差评互撕</b><span>订单截图 96 条</span></a>
+          <a class="channel" href="/#latest"><b>二手交易翻车</b><span>聊天记录 133 条</span></a>
+          <a class="channel" href="/#deep"><b>删帖与改帖记录</b><span>编辑痕迹 41 条</span></a>
+          <a class="channel" href="/#guide"><b>截图真伪初筛</b><span>方法条目 12 则</span></a>
+          <a class="channel" href="/#faq"><b>搬运账号追踪</b><span>账号档案 57 个</span></a>
+          <a class="channel" href="/#rank"><b>本周热度榜单</b><span>每周日更新</span></a>
+          <a class="channel" href="/#comments"><b>评论区风向</b><span>立场抽样 15%</span></a>
+          <a class="channel" href="/#tags"><b>长尾话题索引</b><span>标签 86 个</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section deep" id="deep" aria-labelledby="deepH">
+        <h2 id="deepH">深度解析：删掉的那 12 分钟，比整段监控更能说明问题</h2>
+        <p class="byline">归档编号 HJ-1106-17 · 整理时间 11 月 8 日 10:20 · 涉及平台：贴吧、抖音、微信朋友圈</p>
+
+        <p>滨江路咖啡店这件事，被讨论最多的画面是“21:40 进店”。可真正值得看的，是<strong>原帖在 11 月 6 日 23:18 的第一次编辑</strong>：编辑前的正文写着“21:40 就在店里”，编辑后改成“21:52 左右到店”，同一账号、同一楼层，只删了 7 个字。</p>
+        <p>这一改动与店方提供的监控时间吻合。监控探头位于收银台左上方，画面右上角烧录时间从 21:52:14 开始出现当事人，此前 12 分钟画面里只有店员和一名外卖员。也就是说，原帖最初的说法与监控不一致，修改后的说法才对齐。</p>
+
+        <h3>可核对的中段：三个版本怎么对</h3>
+        <p>把三个流传最广的版本拆开，差异集中在一句话上：</p>
+        <div class="compare" role="table" aria-label="三个版本对进店时间的表述差异">
+          <div class="c-head c-a">版本 A：原帖编辑前</div>
+          <div class="c-head c-b">版本 B：原帖编辑后 / 搬运版</div>
+          <p>“21:40 就在店里，全程没离开。”</p>
+          <p>“21:52 左右到店，之后一直在。”</p>
+          <p>发帖账号“临江路阿哲”，11月6日 23:18 前可见。</p>
+          <p>同一账号，23:18 编辑后；抖音搬运号“江城小事”11月7日 09:41 引用此版。</p>
+          <p>未附截图，只有文字。</p>
+          <p>附楼层 47 截图，含编辑时间标记。</p>
+        </div>
+        <p>搬运版把“21:52”保留下来，却把“编辑过”这件事丢了。抖音那条视频的字幕写“当事人自述 21:52 到店”，听起来像是原始陈述，实际是改过之后的版本。转发链上第二跳的公众号“滨江生活通”又补了一句“店家全程配合”，这句在店方 11 月 7 日 15:02 的回应里找不到对应表述——店方原文只说“已提供 21:30—22:10 监控片段”。</p>
+
+        <blockquote class="quote">判断：这场争议的核心事实（进店时间）已经能靠监控与编辑记录对齐；仍在扩散的偏差，是“编辑痕迹”在搬运中被系统性抹掉，而不是时间本身还有争议。</blockquote>
+
+        <h3>说法差异与规则前后变化</h3>
+        <p>平台规则在这里起了作用。11 月 6 日 23:18 的编辑，按贴吧当时的规则，编辑后不保留历史版本，只显示“已编辑”。11 月 7 日之后，同一板块开始对高热度帖保留编辑记录，楼层 47 的截图因此多出一个灰色小字标记。两个时间点的规则差异，直接决定了后来者能不能看到原始措辞。</p>
+        <ul>
+          <li><strong>事实层：</strong>监控烧录时间 21:52:14 出现当事人；原帖 23:18 编辑；店方 11 月 7 日 15:02 回应提供 21:30—22:10 片段。</li>
+          <li><strong>回应层：</strong>发帖账号截至 11 月 8 日 10:00 未再回应编辑原因；搬运号“江城小事”在评论区置顶“以原帖为准”，未删视频。</li>
+          <li><strong>转述层：</strong>“店家全程配合”一句仅见于公众号“滨江生活通”11 月 7 日 18:20 推文，无店方原话支撑。</li>
+          <li><strong>推测层：</strong>有评论认为编辑是为规避“造谣”投诉，这一说法没有平台处理记录佐证，单列为推测。</li>
+        </ul>
+
+        <h3>为什么这条值得单独归档</h3>
+        <p>它同时具备三个可核查锚点：带烧录时间的监控、带编辑标记的楼层截图、带发布时间的搬运视频。三者时间能串成一条线，这在同类瓜料里不到两成。多数事件只有一段模糊录屏，连日期都靠评论区补。归档时把锚点齐备的条目排在前面，不是替谁背书，而是让“能查的部分”先浮出来。</p>
+        <p>另一层价值在删帖记录。原帖在 11 月 7 日 02:40 被删除，删除前 4 小时评论数 312 条。删除动作本身没有解释，但删除时间与搬运视频的二次发酵几乎同步，这个时间关系被记进时间线，供后来者自行判断。</p>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="section" id="guide" aria-labelledby="guideH">
+        <div class="section-head">
+          <h2 id="guideH">体验指南：五步核一条瓜</h2>
+          <span class="sub">照着做，能筛掉大半失真信息</span>
+        </div>
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>先找时间戳，别先看结论</h3>
+              <p>截图顶部或底部的系统时间、楼层编号、烧录时间，三者有一个就能定位。缺时间的条目直接降级。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>对照首发账号与搬运账号</h3>
+              <p>搬运号常把“据说”改成“确认”。把两段文字并排，看哪句多了肯定语气，那句最可能是加的。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>查编辑与删除痕迹</h3>
+              <p>“已编辑”标记、楼层跳跃、评论数与正文不匹配，都是改帖信号。11 月 6 日那件事就靠这步翻出原始措辞。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>把回应单独放一层</h3>
+              <p>当事方原话、媒体转述、网友概括分开记。转述里出现原话没有的形容词，就标为“转述偏差”。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>给推测留标签</h3>
+              <p>没有截图、录音、处理记录支撑的因果说法，一律进推测层，不与事实层同色显示。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq" aria-labelledby="faqH">
+        <div class="section-head">
+          <h2 id="faqH">常见问答</h2>
+          <span class="sub">关于瓜料核验与归档规则</span>
+        </div>
+
+        <details class="faq">
+          <summary>监控时间差 12 分钟，为什么不能直接认定谁在说谎？</summary>
+          <div class="faq-body">监控烧录时间与手机系统时间可能不同步，探头也可能存在循环录制覆盖。12 分钟差值需要先确认设备时间校准记录。当前能确认的是：21:52:14 画面出现当事人，原帖 23:18 编辑后改为 21:52 左右到店。编辑原因尚无回应，属于未解释项。</div>
+        </details>
+
+        <details class="faq">
+          <summary>群聊记录里的返现金额从 30 元变 15 元，怎么判断是改公告还是两个群？</summary>
+          <div class="faq-body">看群 ID 与管理员账号。两个版本的管理员都是 @优鲜团小陈，群名称一致，成员数从 218 变为 231，说明是同一群在两个时间点的公告。若群 ID 不同，则应视为两个独立群，不能合并讨论。</div>
+        </details>
+
+        <details class="faq">
+          <summary>截图没有楼层编号，还能作为原帖证据吗？</summary>
+          <div class="faq-body">只能算弱证据。楼层编号、发帖时间、账号 ID 三者至少具备两项，才进入原帖层。都没有的截图归入转述层，标注“来源不明”，不作为时间线起点。</div>
+        </details>
+
+        <details class="faq">
+          <summary>搬运视频置顶“以原帖为准”算不算回应？</summary>
+          <div class="faq-body">算表态，不算更正。置顶评论没有修改视频字幕与标题，原错误表述仍在传播。判断是否构成有效回应，要看原内容是否同步改动，而非评论区是否出现说明。</div>
+        </details>
+
+        <details class="faq">
+          <summary>设计稿的文件修改时间能证明原创先后吗？</summary>
+          <div class="faq-body">能提供参考，不能单独定论。文件修改时间可被系统调整，需配合云盘同步记录、发送记录或第三方见证。9 月 12 日 14:33 这个时间点，只有与云盘同步日志吻合时，证据强度才上升。</div>
+        </details>
+
+        <details class="faq">
+          <summary>评论区风向抽样 15%，会不会漏掉关键立场？</summary>
+          <div class="faq-body">抽样按楼层均匀取点，覆盖高赞与低赞两侧，并对含具体时间、截图的评论全量保留。极端但无信息量的情绪发言可能被略过，这也是抽样局限，条目页会标注抽样比例。</div>
+        </details>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="comments" aria-labelledby="commentsH">
+        <div class="section-head">
+          <h2 id="commentsH">用户评论</h2>
+          <span class="sub">来自条目页的公开留言，保留原语气</span>
+        </div>
+        <ul class="comment-list">
+          <li class="comment">
+            <header><span class="avatar">江</span><span class="who">江城夜班司机</span><span>11月8日 09:12</span></header>
+            <p>咖啡店那条我盯了两天。<span class="reply-to">楼层 47 的编辑标记</span>确实是关键，昨天之前根本看不到，今天补图之后才说得通。就是不知道删帖那 4 小时里有没有人截到更早的版本。</p>
+          </li>
+          <li class="comment">
+            <header><span class="avatar">团</span><span class="who">团购群潜水员</span><span>11月7日 21:46</span></header>
+            <p><span class="reply-to">返现群公告</span>两个版本我都存了。11月2日那版把“满 99 返 30”改成“满 99 返 15”，群主没换人，也没发说明。这不算黑料算什么，就是普通的规则变更也得说一声吧。</p>
+          </li>
+          <li class="comment">
+            <header><span class="avatar">设</span><span class="who">设计系大三</span><span>11月7日 16:03</span></header>
+            <p>海报叠图那组对比做得挺细，字体间距和网格都标出来了。不过说实话，这种<span class="reply-to">社团招新海报</span>模板本来就在素材站满天飞，重合不代表抄，得看源文件图层。9月12日那个稿子有云盘记录就稳了。</p>
+          </li>
+          <li class="comment">
+            <header><span class="avatar">路</span><span class="who">路过看热闹</span><span>11月6日 23:55</span></header>
+            <p>坦白讲，这类归档看多了会疲。今天这个说 12 分钟，明天那个说 3 小时，最后大多没有下文。不过至少这里把“推测”单独放一层，比那些标题写“实锤”的号强。</p>
+          </li>
+          <li class="comment">
+            <header><span class="avatar">滨</span><span class="who">滨江生活通读者</span><span>11月7日 19:30</span></header>
+            <p>公众号那句“店家全程配合”我记得，原文确实没这句，是我们转发时加的概括。看到归档里标成转述偏差，认了。以后转之前会先对一遍店方原文。</p>
+          </li>
+          <li class="comment">
+            <header><span class="avatar">二</span><span class="who">二手平台常客</span><span>11月5日 14:21</span></header>
+            <p><span class="reply-to">二手交易翻车</span>那 133 条里，有一半是买家先骂人的。希望以后能标一下谁先开口，不然光看聊天记录截图，卖家显得特别冤。</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news" aria-labelledby="newsH">
+        <div class="section-head">
+          <h2 id="newsH">相关资讯</h2>
+          <span class="sub">同类事件的进展与规则变动</span>
+        </div>
+        <div class="grid-2">
+          <article class="card feature-card">
+            <img class="thumb" src="https://picsum.photos/seed/haijiao-takeout/640/360" width="640" height="360" loading="lazy" alt="外卖订单评价页面，多条差评与商家回复并列">
+            <div class="body">
+              <span class="pill pill-gold">外卖差评</span>
+              <h3><a href="/#news">外卖差评互撕：商家晒出完整订单备注</a></h3>
+              <p>11月6日，商家公开订单备注原文，与买家截图里的版本差一句“不要辣”。两版备注时间相隔 3 分钟。</p>
+              <div class="meta-row"><span>11月6日</span><span>·</span><span>双方各执一词</span></div>
+            </div>
+          </article>
+          <article class="card feature-card">
+            <img class="thumb" src="https://picsum.photos/seed/haijiao-ruleupdate/640/360" width="640" height="360" loading="lazy" alt="论坛版块公告页面，编辑记录功能说明文字">
+            <div class="body">
+              <span class="pill pill-ink">规则变动</span>
+              <h3><a href="/#news">高热度帖开始保留编辑记录：板块规则 11 月 7 日生效</a></h3>
+              <p>触发条件为单帖回复超 200 条。生效首日，楼层 47 的灰色编辑标记成为归档关键证据。</p>
+              <div class="meta-row"><span>11月7日</span><span>·</span><span>板块公告原文可查</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="tags" aria-labelledby="tagsH">
+        <div class="section-head">
+          <h2 id="tagsH">相关推荐</h2>
+          <span class="sub">按具体条目检索</span>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#deep">监控时间差 12 分钟</a>
+          <a href="/#latest">团购返现群公告改版</a>
+          <a href="/#picks">社团招新海报叠图</a>
+          <a href="/#news">外卖订单备注版本差</a>
+          <a href="/#deep">楼层 47 编辑标记</a>
+          <a href="/#latest">临江路阿哲删帖时间</a>
+          <a href="/#guide">缺时间戳条目降级</a>
+          <a href="/#comments">评论区立场抽样</a>
+          <a href="/#news">板块编辑记录新规</a>
+          <a href="/#picks">9月12日设计稿文件</a>
+          <a href="/#latest">江城小事搬运视频</a>
+        </div>
+      </section>
+
+      <!-- 热度榜 -->
+      <section class="section" id="rank" aria-labelledby="rankH">
+        <div class="rank-panel">
+          <h2 id="rankH">本周讨论热度榜 <span>11月2日—11月8日</span></h2>
+          <ol class="rank-list">
+            <li><span class="n">1</span><a href="/#latest">团购返现群聊天记录</a><span class="heat">评论 812 · 转发 3.4k</span></li>
+            <li><span class="n">2</span><a href="/#deep">滨江咖啡店监控时间差</a><span class="heat">评论 689 · 转发 2.1k</span></li>
+            <li><span class="n">3</span><a href="/#picks">社团招新海报抄袭争议</a><span class="heat">评论 403 · 转发 1.2k</span></li>
+            <li><span class="n">4</span><a href="/#news">外卖差评订单备注版本差</a><span class="heat">评论 356 · 转发 980</span></li>
+            <li><span class="n">5</span><a href="/#channels">二手交易翻车聊天记录</a><span class="heat">评论 271 · 转发 640</span></li>
+            <li><span class="n">6</span><a href="/#news">板块编辑记录新规生效</a><span class="heat">评论 188 · 转发 410</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 时间线 -->
+      <section class="section" id="timeline" aria-labelledby="timelineH">
+        <div class="section-head">
+          <h2 id="timelineH">时间线：一周归档节点</h2>
+          <span class="sub">只记可核对动作，不含评价</span>
+        </div>
+        <ul class="timeline">
+          <li>
+            <time datetime="2026-11-02">11月2日 09:12</time>
+            <h3>团购群公告第二版出现</h3>
+            <p>返现金额由 30 元改为 15 元，管理员账号未变，群成员数 231。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-04">11月4日 18:40</time>
+            <h3>社团招新海报争议首帖发布</h3>
+            <p>发布者贴出两张海报对比图，未附设计稿文件。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-06">11月6日 23:18</time>
+            <h3>咖啡店原帖第一次编辑</h3>
+            <p>“21:40 就在店里”改为“21:52 左右到店”，删去“全程没离开”。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-07">11月7日 02:40</time>
+            <h3>咖啡店原帖被删除</h3>
+            <p>删除前评论数 312 条，账号未作说明。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-07">11月7日 15:02</time>
+            <h3>店方回应提供监控片段</h3>
+            <p>所述片段范围 21:30—22:10，与烧录时间 21:52:14 可对应。</p>
+          </li>
+          <li>
+            <time datetime="2026-11-08">11月8日 10:20</time>
+            <h3>楼层 47 第二版截图归档</h3>
+            <p>截图含灰色编辑标记，与板块 11 月 7 日新规生效时间一致。</p>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- 侧栏 -->
+    <aside class="sidebar" aria-label="侧栏导航与条目">
+      <div class="side-card">
+        <h2>栏目导航</h2>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选内容推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rank">热度榜</a></li>
+          <li><a href="/#timeline">时间线</a></li>
+        </ul>
+        <p class="search-feedback" id="searchFeedback" role="status"></p>
+      </div>
+
+      <div class="side-card">
+        <h2>正在核验</h2>
+        <a class="side-item" href="/#latest">
+          <b>团购返现群第二版公告来源</b>
+          <span>等待群主账号回应 · 11月7日</span>
+        </a>
+        <a class="side-item" href="/#deep">
+          <b>咖啡店删帖前 4 小时截图</b>
+          <span>已有 2 人提供录屏 · 11月8日</span>
+        </a>
+        <a class="side-item" href="/#picks">
+          <b>海报设计稿云盘同步记录</b>
+          <span>需第三方见证 · 11月4日</span>
+        </a>
+        <a class="side-item" href="/#news">
+          <b>外卖订单备注原始版本</b>
+          <span>双方截图时间差 3 分钟 · 11月6日</span>
+        </a>
+      </div>
+
+      <div class="side-card">
+        <h2>归档口径</h2>
+        <p style="font-size:13px;color:var(--ink-soft);margin-bottom:4px;">条目按核验层数排序，事实、回应、转述、推测四层分色标注。涉及个人信息的条目仅保留公开账号名与时间。</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer" id="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/#top" aria-label="返回顶部">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="14" fill="#232838"/>
+            <path d="M14 44 L26 18 L36 34 L44 22 L52 44" fill="none" stroke="#f0b429" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="48" cy="16" r="5" fill="#e05c4b"/>
+          </svg>
+          <span class="brand-text">海角黑料网入口</span>
+        </a>
+        <p>把热传事件拆成可核对的时间、截图与回应，按层归档，标清推测。</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h3>归档分区</h3>
+          <ul>
+            <li><a href="/#channels">监控时间差争议</a></li>
+            <li><a href="/#channels">群聊返现纠纷</a></li>
+            <li><a href="/#channels">设计稿抄袭对照</a></li>
+            <li><a href="/#channels">二手交易翻车</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>方法与规则</h3>
+          <ul>
+            <li><a href="/#guide">五步核验指南</a></li>
+            <li><a href="/#faq">编辑痕迹判断</a></li>
+            <li><a href="/#news">板块编辑记录新规</a></li>
+            <li><a href="/#rank">热度榜口径</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>参与与互动</h3>
+          <ul>
+            <li><a href="/#comments">留言与吐槽</a></li>
+            <li><a href="/#latest">提交待核验条目</a></li>
+            <li><a href="/#tags">长尾标签索引</a></li>
+            <li><a href="/#timeline">一周时间线</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="upd">页面内容更新：11月8日 10:20 · 对应条目“楼层 47 第二版截图归档”</span>
+      <span>条目均为示例数据，涉及人物与账号为化名。© 2026 海角黑料网入口 归档整理</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  var header = document.getElementById('siteHeader');
+  var toTop = document.getElementById('toTop');
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  var sideNav = document.getElementById('sideNav');
+  var searchForm = document.getElementById('searchForm');
+  var searchInput = document.getElementById('searchInput');
+  var searchFeedback = document.getElementById('searchFeedback');
+
+  /* 回到顶部按钮 */
+  function onScroll(){
+    if(window.scrollY > 480){
+      toTop.classList.add('show');
+    }else{
+      toTop.classList.remove('show');
+    }
+    highlightNav();
+  }
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 移动端菜单 */
+  menuBtn.addEventListener('click', function(){
+    var open = mainNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', open ? '收起导航菜单' : '打开导航菜单');
+  });
+  mainNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.matchMedia('(max-width: 719px)').matches){
+      mainNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.setAttribute('aria-label','打开导航菜单');
+    }
+  });
+
+  /* 滚动高亮（侧栏 + 顶栏） */
+  var sectionIds = ['overview','picks','latest','channels','deep','guide','faq','comments','news','tags','rank','timeline'];
+  var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  var topLinks = Array.prototype.slice.call(mainNav.querySelectorAll('a'));
+  var sideLinks = Array.prototype.slice.call(sideNav.querySelectorAll('a'));
+
+  function setActive(id){
+    var anchor = '/#' + id;
+    topLinks.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === anchor);
+    });
+    sideLinks.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === anchor);
+    });
+  }
+
+  function highlightNav(){
+    var offset = 110;
+    var current = sections.length ? sections[0].id : null;
+    for(var i = 0; i < sections.length; i++){
+      var s = sections[i];
+      if(s.getBoundingClientRect().top - offset <= 0){
+        current = s.id;
+      }
+    }
+    if(current) setActive(current);
+  }
+
+  /* 本地查找 */
+  searchForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = searchInput.value.trim();
+    if(!q){
+      searchFeedback.textContent = '请输入要查的词，比如“监控”或“返现”。';
+      searchFeedback.classList.add('show');
+      return;
+    }
+    var keywords = q.toLowerCase().split(/\s+/).filter(Boolean);
+    var results = [];
+
+    /* 在主要文本区块内查找 */
+    ['overview','picks','latest','channels','deep','guide','faq','comments','news','tags','rank','timeline'].forEach(function(id){
+      var sec = document.getElementById(id);
+      if(!sec) return;
+      var text = sec.textContent.toLowerCase();
+      var hit = keywords.every(function(k){ return text.indexOf(k) !== -1; });
+      if(hit){
+        var title = sec.querySelector('h2, h3');
+        results.push({
+          id: id,
+          name: title ? title.textContent.trim() : id
+        });
+      }
+    });
+
+    if(results.length){
+      searchFeedback.textContent = '找到 ' + results.length + ' 个相关栏目：' + results.map(function(r){ return r.name; }).join('、') + '。点击侧栏导航可跳转。';
+      searchFeedback.classList.add('show');
+    }else{
+      searchFeedback.textContent = '没有找到与“' + q + '”匹配的条目。可换用“监控”“返现”“海报”“外卖”等具体词再试。';
+      searchFeedback.classList.add('show');
+    }
+  });
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "海角黑料网入口",
+  "description": "整理社区热传瓜料与争议话题的归档站，收录时间线、截图核验与版本差异对照。",
+  "inLanguage": "zh-CN"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "监控时间差 12 分钟，为什么不能直接认定谁在说谎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "监控烧录时间与手机系统时间可能不同步，探头也可能存在循环录制覆盖。12 分钟差值需要先确认设备时间校准记录。当前能确认的是 21:52:14 画面出现当事人，原帖 23:18 编辑后改为 21:52 左右到店，编辑原因尚无回应。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "群聊记录里的返现金额从 30 元变 15 元，怎么判断是改公告还是两个群？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看群 ID 与管理员账号。两个版本的管理员都是同一账号，群名称一致，成员数从 218 变为 231，说明是同一群在两个时间点的公告。若群 ID 不同，应视为两个独立群。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "截图没有楼层编号，还能作为原帖证据吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "只能算弱证据。楼层编号、发帖时间、账号 ID 三者至少具备两项，才进入原帖层。都没有的截图归入转述层，标注来源不明，不作为时间线起点。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "搬运视频置顶“以原帖为准”算不算回应？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "算表态，不算更正。置顶评论没有修改视频字幕与标题，原错误表述仍在传播。判断是否构成有效回应，要看原内容是否同步改动。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "设计稿的文件修改时间能证明原创先后吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能提供参考，不能单独定论。文件修改时间可被系统调整，需配合云盘同步记录、发送记录或第三方见证。时间点只有与同步日志吻合时，证据强度才上升。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "评论区风向抽样 15%，会不会漏掉关键立场？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "抽样按楼层均匀取点，覆盖高赞与低赞两侧，并对含具体时间、截图的评论全量保留。极端但无信息量的情绪发言可能被略过，这是抽样局限，条目页会标注抽样比例。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+              </html>
